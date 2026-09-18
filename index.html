@@ -25,7 +25,6 @@
             --light: #f8fafc;
             --dark: #0f172a;
             --gray-muted: #64748b;
-            --glass: rgba(255, 255, 255, 0.95);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --radius: 12px;
             --shadow: 0 10px 30px -10px rgba(10, 42, 75, 0.1);
@@ -188,7 +187,7 @@
 
         /* ADMIN CONSOLE */
         .admin-dashboard-section { padding: 80px 8%; background: #05182d; color: white; display: none; }
-        .admin-grid { display: grid; grid-template-columns: 1fr 1.8fr; gap: 40px; margin-top: 30px; }
+        .admin-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 30px; }
         .admin-panel-card { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1); }
         .admin-input { width: 100%; padding: 12px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0,0,0,0.4); color: white; border-radius: 8px; margin-bottom: 15px; outline: none; font-family: inherit; }
         .admin-input:focus { border-color: var(--accent); }
@@ -200,6 +199,7 @@
         .back-to-top:hover { background: var(--accent); color: var(--primary); }
         
         #success-section { display: none; background: white; padding: 50px; border-radius: var(--radius); text-align: center; border: 1px solid #e2e8f0; }
+        #contact-success-section { display: none; background: white; padding: 40px; border-radius: var(--radius); text-align: center; border: 1px solid #e2e8f0; }
 
         @media (max-width: 992px) {
             .top-bar { display: none; }
@@ -501,27 +501,36 @@
     <section id="contact-us" class="contact-container">
         <div>
             <h2 class="serif" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">Contact Us</h2>
-            <p style="color: var(--gray-muted); margin-bottom: 25px;">Have questions regarding admissions, fees, or visits? Send us a direct message.</p>
+            <p style="color: var(--gray-muted); margin-bottom: 25px;">Have questions regarding admissions, fees, or visits? Send us a direct message straight to the administrative console.</p>
             <div style="margin-bottom: 15px;"><i class="fas fa-map-marker-alt" style="color: var(--secondary); margin-right: 10px;"></i> P.O Box 26935, Kampala</div>
             <div style="margin-bottom: 15px;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 10px;"></i> Mon - Fri: 8:00 AM - 5:00 PM</div>
             <div><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 10px;"></i> namungoonahighschool@gmail.com</div>
         </div>
 
-        <form action="https://formspree.io/f/mojrlqgw" method="POST" style="background: var(--light); padding: 35px; border-radius: var(--radius); border: 1px solid #e2e8f0;">
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label>Your Name</label>
-                <input type="text" name="name" required placeholder="Enter full name">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label>Email Address</label>
-                <input type="email" name="_replyto" required placeholder="Enter email">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label>Message</label>
-                <textarea name="message" rows="4" required placeholder="Type your message here..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-        </form>
+        <div id="contact-form-wrapper">
+            <form id="main-contact-form" style="background: var(--light); padding: 35px; border-radius: var(--radius); border: 1px solid #e2e8f0;">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>Your Name</label>
+                    <input type="text" id="contact-name" required placeholder="Enter full name" style="width:100%; padding: 12px 15px; border: 1.5px solid #cbd5e1; border-radius: 8px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>Email Address / Phone</label>
+                    <input type="text" id="contact-email" required placeholder="Enter email or phone number" style="width:100%; padding: 12px 15px; border: 1.5px solid #cbd5e1; border-radius: 8px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label>Message</label>
+                    <textarea id="contact-msg" rows="4" required placeholder="Type your message here..." style="width:100%; padding: 12px 15px; border: 1.5px solid #cbd5e1; border-radius: 8px;"></textarea>
+                </div>
+                <button type="submit" class="btn-primary" id="contactSubmitButton" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+
+        <div id="contact-success-section">
+            <i class="fas fa-check-circle" style="font-size: 3.5rem; color: #25d366; margin-bottom: 15px;"></i>
+            <h2 class="serif" style="color: var(--primary); font-size: 1.8rem;">Message Delivered!</h2>
+            <p style="color: var(--gray-muted); margin-top: 10px; font-size: 0.95rem;">Your message has been sent directly to the administrative console ledger with your sender details.</p>
+            <button class="btn-secondary" style="margin-top: 20px;" onclick="resetContactView()">Send Another Message</button>
+        </div>
     </section>
 
     <section class="admin-dashboard-section" id="adminConsoleDeck">
@@ -531,7 +540,7 @@
         </div>
         
         <div class="admin-grid">
-            <div class="admin-panel-card">
+            <div class="admin-panel-card" style="margin-bottom: 30px;">
                 <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;"><i class="fas fa-plus-circle"></i> Publish News & Media</h3>
                 <input type="text" id="adm-news-title" class="admin-input" placeholder="Article Title">
                 <input type="text" id="adm-news-date" class="admin-input" placeholder="Publication Date (e.g., June 15, 2026)">
@@ -543,9 +552,14 @@
                 <button class="btn-secondary" style="width: 100%;" onclick="publishNewsCardRuntime()"><i class="fas fa-upload"></i> Publish to Feed</button>
             </div>
             
-            <div class="admin-panel-card">
+            <div class="admin-panel-card" style="margin-bottom: 30px;">
                 <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;"><i class="fas fa-database"></i> Applications Ledger</h3>
                 <div id="adminDataLedgerWrapper" style="max-height: 450px; overflow-y: auto;"></div>
+            </div>
+
+            <div class="admin-panel-card">
+                <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;"><i class="fas fa-envelope-open-text"></i> Contact Messages Ledger (Sender Info Included)</h3>
+                <div id="adminContactLedgerWrapper" style="max-height: 450px; overflow-y: auto;"></div>
             </div>
         </div>
     </section>
@@ -674,6 +688,44 @@
             document.getElementById('main-admission-form').style.display = 'grid';
         }
 
+        // CONTACT MESSAGES DATABASE SUBMISSION (Direct to Admin Panel with Sender Info)
+        document.getElementById('main-contact-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('contactSubmitButton');
+            submitBtn.disabled = true;
+            submitBtn.innerText = "Sending Message...";
+
+            const payload = {
+                sender_name: document.getElementById('contact-name').value.trim(),
+                sender_contact: document.getElementById('contact-email').value.trim(),
+                message: document.getElementById('contact-msg').value.trim(),
+                created_at: new Date().toISOString()
+            };
+
+            try {
+                const { error } = await supabaseClient.from('contacts').insert([payload]);
+                if (error) throw error;
+
+                document.getElementById('main-contact-form').style.display = 'none';
+                document.getElementById('contact-success-section').style.display = 'block';
+                document.getElementById('main-contact-form').reset();
+
+                if(document.getElementById('adminConsoleDeck').style.display === 'block') {
+                    renderAdminContactLedger();
+                }
+            } catch (err) {
+                alert("Message Transmission Error: " + err.message);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = "Send Message";
+            }
+        });
+
+        function resetContactView() {
+            document.getElementById('contact-success-section').style.display = 'none';
+            document.getElementById('main-contact-form').style.display = 'block';
+        }
+
         // SECURE ADMIN ACCESS WORKFLOW
         function promptAdminLogin() {
             const inputPass = prompt("Enter Administration Access Keyphrase:");
@@ -686,6 +738,7 @@
                 }
                 document.getElementById('adminConsoleDeck').style.display = 'block';
                 renderAdminLedgerData();
+                renderAdminContactLedger();
                 document.getElementById('adminConsoleDeck').scrollIntoView({ behavior: 'smooth' });
             } else {
                 alert("Access Denied: Invalid Access Keyphrase.");
@@ -701,7 +754,7 @@
         // RENDER APPLICATIONS IN ADMIN CONSOLE
         async function renderAdminLedgerData() {
             const container = document.getElementById('adminDataLedgerWrapper');
-            container.innerHTML = "<p style='color:var(--accent); font-size:0.85rem;'>Fetching submitted records from cloud database...</p>";
+            container.innerHTML = "<p style='color:var(--accent); font-size:0.85rem;'>Fetching submitted application records from cloud database...</p>";
             
             try {
                 const { data, error } = await supabaseClient
@@ -712,7 +765,7 @@
                 if (error) throw error;
 
                 if (!data || data.length === 0) {
-                    container.innerHTML = "<p style='opacity:0.6; padding:10px;'>No submission records found.</p>";
+                    container.innerHTML = "<p style='opacity:0.6; padding:10px;'>No application records found.</p>";
                     return;
                 }
 
@@ -736,11 +789,60 @@
         }
 
         async function deleteApplication(id) {
-            if (confirm("Permanently delete this record from the central database?")) {
+            if (confirm("Permanently delete this application record from the central database?")) {
                 try {
                     const { error } = await supabaseClient.from('applications').delete().eq('id', id);
                     if (error) throw error;
                     renderAdminLedgerData();
+                } catch (err) {
+                    alert("Delete operation failed: " + err.message);
+                }
+            }
+        }
+
+        // RENDER CONTACT MESSAGES IN ADMIN CONSOLE
+        async function renderAdminContactLedger() {
+            const container = document.getElementById('adminContactLedgerWrapper');
+            container.innerHTML = "<p style='color:var(--accent); font-size:0.85rem;'>Fetching contact messages from cloud database...</p>";
+            
+            try {
+                const { data, error } = await supabaseClient
+                    .from('contacts')
+                    .select('*')
+                    .order('created_at', { ascending: false });
+
+                if (error) throw error;
+
+                if (!data || data.length === 0) {
+                    container.innerHTML = "<p style='opacity:0.6; padding:10px;'>No contact messages found.</p>";
+                    return;
+                }
+
+                container.innerHTML = "";
+                data.forEach((item) => {
+                    const itemDiv = document.createElement('div');
+                    itemDiv.style.cssText = "background: rgba(255,255,255,0.08); padding: 15px; border-radius: 8px; margin-bottom: 12px; font-size: 0.85rem; position: relative; border: 1px solid rgba(255,255,255,0.1);";
+                    itemDiv.innerHTML = `
+                        <button style="position:absolute; right:12px; top:12px; background:var(--secondary); color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-weight:600;" onclick="deleteContactMessage('${item.id}')">Delete</button>
+                        <strong style="color:var(--accent);">Sender Name:</strong> ${item.sender_name}<br>
+                        <strong>Contact Info:</strong> ${item.sender_contact}<br>
+                        <strong style="color:var(--accent);">Message:</strong><br>
+                        <p style="background: rgba(0,0,0,0.2); padding: 8px; border-radius: 4px; margin-top: 5px; margin-bottom: 5px;">${item.message}</p>
+                        <span style='opacity:0.5; font-size:0.75rem; display:block; margin-top:5px;'>Received: ${new Date(item.created_at).toLocaleString()}</span>
+                    `;
+                    container.appendChild(itemDiv);
+                });
+            } catch (err) {
+                container.innerHTML = `<p style='color:var(--secondary);'>Contact Ledger Sync Failed: ${err.message}</p>`;
+            }
+        }
+
+        async function deleteContactMessage(id) {
+            if (confirm("Permanently delete this message from the central database?")) {
+                try {
+                    const { error } = await supabaseClient.from('contacts').delete().eq('id', id);
+                    if (error) throw error;
+                    renderAdminContactLedger();
                 } catch (err) {
                     alert("Delete operation failed: " + err.message);
                 }
