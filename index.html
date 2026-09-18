@@ -135,7 +135,6 @@
         /* BRIGHTENED HERO SECTION */
         .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden; }
         
-        /* Lightened overlay gradient to make background images pop immediately */
         .hero-overlay { 
             position: absolute; 
             top: 0; 
@@ -156,11 +155,9 @@
             background-position: center; 
             opacity: 0; 
             transition: opacity 1s ease-in-out, transform 4s ease-in-out;
-            /* Filter applied to boost standard brightness and clarity */
             filter: brightness(1.15) contrast(1.05); 
         }
         
-        /* Ensures initial slide is 100% visible immediately without loading delays */
         .slide.active { 
             opacity: 1 !important; 
             transform: scale(1.03); 
@@ -271,7 +268,8 @@
                 <a href="school gallery.html">Gallery</a>
                 <a href="dos.html">Past Papers</a>
                 <a href="constitution.html">Constitution</a>
-                <a href="https://mis.nhs.ac.ug" target="_blank"><i class="fas fa-user-graduate"></i> MIS Portal</a>
+                <a href="https://mis.nhs.ac.ug" target="_blank"><i class="fas fa-user-graduate"></i> MIS</a>
+                <button class="portal-btn" onclick="promptAdminLogin()" style="background: rgba(251, 192, 45, 0.2); border: 1px solid var(--accent); color: var(--accent); padding: 8px 14px;"><i class="fas fa-lock"></i> Admin</button>
                 <button class="portal-btn" onclick="toggleMenu('anthemMenu')" style="background: var(--accent); color: var(--primary);"><i class="fas fa-music"></i> Anthem</button>
             </nav>
             
@@ -802,7 +800,6 @@
                 renderNewsArticles();
             };
 
-            // Read device local media image as Base64 Data URL if uploaded
             if (fileInput.files && fileInput.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
