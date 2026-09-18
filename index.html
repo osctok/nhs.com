@@ -1,854 +1,178 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namungoona High School | Strive to Excel</title>
-    
-    <link rel="icon" type="image/png" href="SCHOOL BADGE.png">
-    <link rel="apple-touch-icon" href="SCHOOL BADGE.png">
-    <link rel="shortcut icon" href="SCHOOL BADGE.png" type="image/x-icon">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    <style>
-        :root {
-            --primary: #0a2a4b;
-            --primary-dark: #05182d;
-            --secondary: #d32f2f;
-            --secondary-hover: #b71c1c;
-            --accent: #fbc02d;
-            --accent-hover: #f9a825;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray-muted: #64748b;
-            --glass: rgba(255, 255, 255, 0.95);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --radius: 12px;
-            --shadow: 0 10px 30px -10px rgba(10, 42, 75, 0.1);
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Outfit', sans-serif; line-height: 1.6; color: var(--dark); background-color: #ffffff; overflow-x: hidden; }
-        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
-
-        /* TOP CONTACT BAR */
-        .top-bar {
-            background: var(--dark);
-            color: rgba(255,255,255,0.85);
-            padding: 0 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.82rem;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            height: 40px;
-            z-index: 1001;
-        }
-        .top-bar a { color: inherit; text-decoration: none; transition: var(--transition); }
-        .top-bar a:hover { color: var(--accent); }
-        .top-bar-info { display: flex; gap: 20px; align-items: center; }
-
-        /* HEADER & NAVIGATION */
-        header { 
-            position: fixed; 
-            top: 40px; 
-            left: 0; 
-            width: 100%; 
-            z-index: 1000; 
-            background: rgba(10, 42, 75, 0.96); 
-            backdrop-filter: blur(12px); 
-            color: #fff; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12); 
-            transition: var(--transition); 
-        }
-        header.scrolled { top: 0; padding: 2px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
-        .nav-container { display: flex; align-items: center; justify-content: space-between; max-width: 1300px; margin: 0 auto; padding: 8px 25px; }
-        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; color: white; }
-        .logo-area img { width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2)); }
-        .school-name { font-size: 1.25rem; font-weight: 700; font-family: 'Playfair Display', serif; }
-        .school-motto { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-weight: 600; }
-
-        .desktop-nav { display: flex; gap: 18px; align-items: center; }
-        .desktop-nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); }
-        .desktop-nav a:hover, .desktop-nav a.active { color: var(--accent); }
-
-        .menu-toggle { display: none; font-size: 1.4rem; cursor: pointer; color: #fff; }
-
-        /* BUTTONS */
-        .btn-primary, .btn-secondary, .portal-btn {
-            padding: 10px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            justify-content: center;
-        }
-        .btn-primary { background: var(--secondary); color: #fff; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3); }
-        .btn-primary:hover { background: var(--secondary-hover); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4); }
-        .btn-secondary { background: var(--accent); color: var(--primary); font-weight: 700; box-shadow: 0 4px 15px rgba(251, 192, 45, 0.3); }
-        .btn-secondary:hover { background: var(--accent-hover); transform: translateY(-2px); }
-
-        /* SIDE DRAWERS */
-        .side-menu { 
-            position: fixed; 
-            top: 0; 
-            right: -100%; 
-            width: 340px; 
-            height: 100vh; 
-            background: var(--primary-dark); 
-            color: #fff; 
-            z-index: 2005; 
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
-            padding: 40px 30px; 
-            overflow-y: auto; 
-            box-shadow: -10px 0 50px rgba(0,0,0,0.5);
-        }
-        .side-menu.active { right: 0; }
-        .close-menu { font-size: 1.8rem; cursor: pointer; color: var(--accent); float: right; }
-        
-        .side-menu ul { list-style: none; margin-top: 30px; }
-        .side-menu li { margin-bottom: 10px; padding: 12px 15px; border-radius: var(--radius); background: rgba(255,255,255,0.05); display: flex; align-items: center; gap: 12px; transition: var(--transition); }
-        .side-menu li:hover { background: rgba(255,255,255,0.12); transform: translateX(-3px); }
-        .side-menu a { color: #fff; text-decoration: none; font-weight: 500; width: 100%; }
-
-        .side-triggers { position: fixed; left: 0; top: 50%; transform: translateY(-50%); z-index: 999; display: flex; flex-direction: column; gap: 5px; }
-        .trigger-btn { background: var(--primary); color: #fff; padding: 14px 10px; font-size: 0.68rem; font-weight: 700; writing-mode: vertical-lr; cursor: pointer; border-radius: 0 8px 8px 0; box-shadow: 4px 4px 15px rgba(0,0,0,0.25); letter-spacing: 2px; transition: var(--transition); }
-        .trigger-btn:hover { padding-left: 14px; background: var(--accent); color: var(--primary); }
-        .anthem-trigger { background: var(--secondary); }
-        .anthem-trigger:hover { background: var(--secondary-hover); color: white; }
-
-        /* BRIGHTENED HERO SECTION */
-        .hero { position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; overflow: hidden; }
-        
-        .hero-overlay { 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: linear-gradient(180deg, rgba(10,42,75,0.35) 0%, rgba(5,24,45,0.2) 100%); 
-            z-index: 2; 
-        }
-        
-        .slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-        
-        .slide { 
-            position: absolute; 
-            width: 100%; 
-            height: 100%; 
-            background-size: cover; 
-            background-position: center; 
-            opacity: 0; 
-            transition: opacity 1s ease-in-out, transform 4s ease-in-out;
-            filter: brightness(1.15) contrast(1.05); 
-        }
-        
-        .slide.active { 
-            opacity: 1 !important; 
-            transform: scale(1.03); 
-        }
-        
-        .hero-content { position: relative; z-index: 3; max-width: 900px; padding: 20px; margin-top: 40px; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
-        .hero h1 { font-size: clamp(2.5rem, 5.5vw, 4.5rem); margin-bottom: 15px; line-height: 1.1; text-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-
-        /* STATS BAR */
-        .stats-bar { background: #fff; padding: 40px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; box-shadow: var(--shadow); position: relative; z-index: 4; border-bottom: 1px solid #edf2f7; }
-        .stat-item h2 { font-size: 3rem; color: var(--primary); font-family: 'Outfit', sans-serif; font-weight: 700; }
-        .stat-item p { color: var(--gray-muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* SECTIONS GENERAL */
-        .section { padding: 90px 8%; }
-        .director-section { max-width: 1300px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
-        .director-img-wrapper { position: relative; }
-        .director-img-wrapper img { width: 100%; border-radius: var(--radius); box-shadow: 20px 20px 0 var(--primary); }
-        .bursary-alert-container { background: linear-gradient(135deg, var(--primary) 0%, #154575 100%); color: white; padding: 25px; border-radius: var(--radius); margin-top: 25px; display: flex; gap: 20px; align-items: center; box-shadow: var(--shadow); }
-
-        .sector-section { padding: 90px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; background: #fff; }
-        .info-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid #f1f5f9; transition: var(--transition); }
-        .info-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
-        .card-img { width: 100%; height: 230px; object-fit: cover; }
-        .card-body { padding: 30px; }
-
-        /* ADMISSION & MIS */
-        .admission-section { padding: 90px 8%; background: var(--light); }
-        .portal-info { display: grid; grid-template-columns: 1fr 1.4fr; gap: 50px; align-items: start; }
-        .mis-card { background: var(--primary); color: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow); }
-        .mis-card ul { list-style: none; margin: 25px 0; }
-        .mis-card li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; font-size: 0.95rem; }
-
-        .admission-form { background: white; padding: 45px; border-radius: var(--radius); box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border: 1px solid #e2e8f0; }
-        .admission-form h2 { grid-column: span 2; color: var(--primary); text-align: center; font-size: 2rem; }
-        .form-group { display: flex; flex-direction: column; }
-        .form-group label { font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-group input, .form-group select, .form-group textarea { padding: 12px 15px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-family: inherit; transition: var(--transition); outline: none; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(10, 42, 75, 0.1); }
-        .form-full { grid-column: span 2; }
-        .submit-btn { grid-column: span 2; background: var(--secondary); color: white; padding: 16px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition); box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3); }
-        .submit-btn:hover { background: var(--secondary-hover); }
-
-        /* NEWS & CONTACT */
-        .news-section { padding: 90px 8%; background: #fff; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
-        .news-card { background: var(--light); border-radius: var(--radius); overflow: hidden; border: 1px solid #e2e8f0; transition: var(--transition); display: flex; flex-direction: column; }
-        .news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-        .news-card img { width: 100%; height: 220px; object-fit: cover; }
-        .news-card-body { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
-
-        .contact-container { padding: 90px 8%; display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; background: white; }
-
-        /* ADMIN CONSOLE */
-        .admin-dashboard-section { padding: 80px 8%; background: #05182d; color: white; display: none; }
-        .admin-grid { display: grid; grid-template-columns: 1fr 1.8fr; gap: 40px; margin-top: 30px; }
-        .admin-panel-card { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1); }
-        .admin-input { width: 100%; padding: 12px; border: 1px solid rgba(255, 255, 255, 0.2); background: rgba(0,0,0,0.4); color: white; border-radius: 8px; margin-bottom: 15px; outline: none; font-family: inherit; }
-        .admin-input:focus { border-color: var(--accent); }
-
-        /* UTILITIES */
-        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 3000; cursor: pointer; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); transition: var(--transition); }
-        .whatsapp-float:hover { transform: scale(1.1); }
-        .back-to-top { position: fixed; bottom: 100px; right: 35px; background: var(--primary); color: white; width: 45px; height: 45px; border-radius: 50%; display: none; align-items: center; justify-content: center; z-index: 2999; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: var(--transition); }
-        .back-to-top:hover { background: var(--accent); color: var(--primary); }
-        
-        #success-section { display: none; background: white; padding: 50px; border-radius: var(--radius); text-align: center; border: 1px solid #e2e8f0; }
-
-        @media (max-width: 992px) {
-            .top-bar { display: none; }
-            header { top: 0; }
-            .desktop-nav { display: none; }
-            .menu-toggle { display: block; }
-            .director-section, .portal-info, .contact-container, .admin-grid { grid-template-columns: 1fr; }
-            .admission-form { grid-template-columns: 1fr; padding: 25px; }
-            .admission-form h2, .form-full, .submit-btn { grid-column: span 1; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namungoona High School</title>
+  <!-- FontAwesome for Social Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #004d40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .updates-box {
+      background: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    .contact-section {
+      margin-bottom: 20px;
+    }
+    .social-icons {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .social-icons a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .social-icons a:hover {
+      color: #00bcd4;
+    }
+    .developer-credit {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 15px;
+    }
+    .developer-credit a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+    .developer-credit a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="top-bar-info">
-            <span><i class="fas fa-phone" style="color: var(--accent);"></i> <a href="tel:+256700627960">+256 700 627 960</a> / <a href="tel:+256788772660">+256 788 772 660</a></span>
-            <span><i class="fas fa-envelope" style="color: var(--accent);"></i> <a href="mailto:namungoonahighschool@gmail.com">namungoonahighschool@gmail.com</a></span>
-        </div>
-        <div>
-            <i class="fas fa-map-marker-alt" style="color: var(--secondary);"></i> 5 Km Hoima Road, 100m off Nakibinge Stage, Kampala
-        </div>
+  <header>
+    <h1>Namungoona High School</h1>
+    <p>Official Updates Portal</p>
+  </header>
+
+  <main>
+    <h2>Latest School Announcements</h2>
+    <!-- Dynamic live container for updates -->
+    <div id="updates-container">
+      <p>Loading updates...</p>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Contact Us Section -->
+    <div class="contact-section">
+      <h3>Contact Us</h3>
+      <p>P.O Box 26935, Kampala</p>
     </div>
 
-    <header id="mainHeader">
-        <div class="nav-container">
-            <a href="#home" class="logo-area">
-                <img src="SCHOOL BADGE.png" alt="NHS Badge" onerror="this.src='https://via.placeholder.com/60?text=NHS'">
-                <div>
-                    <div class="school-name">Namungoona High School</div>
-                    <div class="school-motto">Strive to Excel</div>
-                </div>
-            </a>
-            
-            <nav class="desktop-nav">
-                <a href="#home" class="active">Home</a>
-                <a href="#director">Director</a>
-                <a href="#sectors">Community</a>
-                <a href="#admissions">Admissions</a>
-                <a href="magazine.html">Magazine</a>
-                <a href="school gallery.html">Gallery</a>
-                <a href="dos.html">Past Papers</a>
-                <a href="constitution.html">Constitution</a>
-                <a href="https://mis.nhs.ac.ug" target="_blank"><i class="fas fa-user-graduate"></i> MIS</a>
-                <button class="portal-btn" onclick="promptAdminLogin()" style="background: rgba(251, 192, 45, 0.2); border: 1px solid var(--accent); color: var(--accent); padding: 8px 14px;"><i class="fas fa-lock"></i> Admin</button>
-                <button class="portal-btn" onclick="toggleMenu('anthemMenu')" style="background: var(--accent); color: var(--primary);"><i class="fas fa-music"></i> Anthem</button>
-            </nav>
-            
-            <div class="menu-toggle" onclick="toggleMenu('mobileNav')">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-    <div class="side-menu" id="mobileNav">
-        <span class="close-menu" onclick="toggleMenu('mobileNav')">&times;</span>
-        <h3 class="serif" style="color: var(--accent); margin-bottom: 20px; font-size: 1.5rem;">Main Menu</h3>
-        <ul>
-            <li><a href="#home" onclick="toggleMenu('mobileNav')"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#director" onclick="toggleMenu('mobileNav')"><i class="fas fa-user-tie"></i> Director's Desk</a></li>
-            <li><a href="#sectors" onclick="toggleMenu('mobileNav')"><i class="fas fa-users"></i> Our Community</a></li>
-            <li><a href="#admissions" onclick="toggleMenu('mobileNav')"><i class="fas fa-pen-alt"></i> Admissions</a></li>
-            <li><a href="magazine.html"><i class="fas fa-file-alt"></i> Magazine</a></li>
-            <li><a href="school gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="dos.html"><i class="fas fa-book"></i> Past Papers</a></li>
-            <li><a href="constitution.html"><i class="fas fa-gavel"></i> Constitution</a></li>
-            <li><a href="https://mis.nhs.ac.ug" target="_blank"><i class="fas fa-user-graduate"></i> MIS Portal</a></li>
-        </ul>
-        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 25px;">
-            <button class="btn-secondary" onclick="toggleMenu('clubsMenu'); toggleMenu('mobileNav');"><i class="fas fa-star"></i> School Clubs</button>
-            <button class="btn-primary" onclick="toggleMenu('anthemMenu'); toggleMenu('mobileNav');"><i class="fas fa-music"></i> School Anthem</button>
-            <button class="portal-btn" onclick="promptAdminLogin()" style="background: rgba(251, 192, 45, 0.15); border: 1px dashed var(--accent); text-align: center;"><i class="fas fa-lock"></i> Admin Panel</button>
-        </div>
+    <!-- Social Media Icons Section -->
+    <div class="social-icons">
+      <a href="https://tiktok.com/@namungoonahighschool1" target="_blank" aria-label="TikTok">
+        <i class="fa-brands fa-tiktok"></i> @namungoonahighschool1
+      </a>
+      <a href="https://facebook.com/namungoonahighschool" target="_blank" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i> @namungoonahighschool
+      </a>
+      <a href="https://youtube.com/@namungoonahighschool" target="_blank" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i> @namungoonahighschool
+      </a>
     </div>
 
-    <div class="side-menu" id="clubsMenu" style="background: #fff; color: var(--dark);">
-        <span class="close-menu" onclick="toggleMenu('clubsMenu')" style="color: var(--primary);">&times;</span>
-        <h3 class="serif" style="color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.5rem;"><i class="fas fa-star" style="color: var(--accent);"></i> School Clubs</h3>
-        <ul style="color: #475569;"> 
-            <li style="background:#f1f5f9;"><i class="fas fa-microchip" style="color: var(--primary);"></i> ICT & Robotics Club</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-comments" style="color: var(--primary);"></i> Debate Society</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-flask" style="color: var(--primary);"></i> Science Club</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-leaf" style="color: var(--primary);"></i> Wildlife & Environment</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-music" style="color: var(--primary);"></i> Music, Dance & Drama</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-cross" style="color: var(--primary);"></i> Scripture Union</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-mosque" style="color: var(--primary);"></i> Muslim Students Association</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-first-aid" style="color: var(--primary);"></i> Red Cross Club</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-briefcase" style="color: var(--primary);"></i> Entrepreneurship Club</li>
-            <li style="background:#f1f5f9;"><i class="fas fa-futbol" style="color: var(--primary);"></i> Sports Club</li>
-        </ul>
+    <!-- Developer Credit with Google Search Link -->
+    <div class="developer-credit">
+      Developed by <a href="https://www.google.com/search?q=about+osctok+technologies" target="_blank">Osctok Technologies</a>
     </div>
+  </footer>
 
-    <div class="side-menu" id="anthemMenu">
-        <span class="close-menu" onclick="toggleMenu('anthemMenu')">&times;</span>
-        <h3 class="serif" style="border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.5rem;"><i class="fas fa-music" style="color: var(--accent);"></i> School Anthem</h3>
-        <div style="font-style: italic; line-height: 1.8; font-size: 0.95rem; opacity: 0.9;">
-            <p><strong style="color: var(--accent);">Verse 1:</strong><br>We are the trainees, of tomorrow.<br>At NAMUNGOONA HIGH SCHOOL,<br>The school of brilliant ladies and gentlemen,<br>It caters for those in need,<br>You can enter and enjoy it's our pleasure,<br>Education is the key wherever the world.</p><br>
-            <p><strong style="color: var(--accent);">Verse 2:</strong><br>We have a motto, in our school.<br>We still <strong>Strive to Excel</strong>,<br>Support us whenever we call for help,<br>To fulfill our motto,<br>Let us struggle and raise our standards.</p><br>
-            <p><strong style="color: var(--accent);">Verse 3:</strong><br>Lord Almighty, Bless our school.<br>Without your power no one can stand,<br>We hand our school in your hands,<br>So that you may embrace it.<br>Keep us in peace,<br>In our school, <br>Of <strong>NAMUNGOONA HIGH SCHOOL</strong>.</p>
-        </div>
-    </div>
+  <!-- Supabase CDN Client Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://qyzjjxnjieyinqtiolyw.supabase.co";
+    const SUPABASE_KEY = "sb_publishable_QowhVrnPfN-_IYe0_zwFZA_HTIMRqoi";
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    <div class="side-triggers">
-        <div class="trigger-btn" onclick="toggleMenu('clubsMenu')">SCHOOL CLUBS</div>
-        <div class="trigger-btn anthem-trigger" onclick="toggleMenu('anthemMenu')">SCHOOL ANTHEM</div>
-    </div>
+    const updatesContainer = document.getElementById('updates-container');
 
-    <section class="hero" id="home"> 
-        <div class="hero-overlay"></div>
-        <div class="slideshow">
-            <div class="slide active" style="background-image: url('mine.jpg');"></div>
-            <div class="slide" style="background-image: url('IMG-20251123-WA0027.jpg');"></div>
-            <div class="slide" style="background-image: url('p535 (1).jpg');"></div>
-            <div class="slide" style="background-image: url('why.jpg');"></div>
-            <div class="slide" style="background-image: url('hmm.jpg');"></div>
-            <div class="slide" style="background-image: url('IMG-20251106-WA0016.jpg');"></div>
-            <div class="slide" style="background-image: url('p535.jpg');"></div>
-        </div>
+    function displayUpdates(data) {
+      if (!data || data.length === 0) {
+        updatesContainer.innerHTML = '<p>No updates available at the moment.</p>';
+        return;
+      }
+      updatesContainer.innerHTML = '';
+      data.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'updates-box';
+        div.innerHTML = `<p>${item.content}</p><small style="color:gray;">${new Date(item.created_at).toLocaleString()}</small>`;
+        updatesContainer.appendChild(div);
+      });
+    }
 
-        <div class="hero-content">
-            <h1>Namungoona High School</h1>
-            <p style="font-size: 1.4rem; color: var(--accent); font-weight: 600; margin-bottom: 5px;"><i>Strive to Excel</i> — Securing Futures Since 1999</p>
-            <p style="font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 35px; opacity: 0.9;">UNEB CENTER NO. U1256</p>
-            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="#admissions" class="btn-primary"><i class="fas fa-paper-plane"></i> Enroll Now</a>
-                <button onclick="toggleMenu('clubsMenu')" class="btn-secondary"><i class="fas fa-compass"></i> Explore Clubs</button>
-            </div>
-        </div>
-    </section>
+    function appendNewUpdateToUI(item) {
+      const noUpdatesMsg = updatesContainer.querySelector('p');
+      if (noUpdatesMsg && noUpdatesMsg.textContent === 'No updates available at the moment.') {
+        updatesContainer.innerHTML = '';
+      }
+      const div = document.createElement('div');
+      div.className = 'updates-box';
+      div.innerHTML = `<p>${item.content}</p><small style="color:gray;">${new Date(item.created_at).toLocaleString()}</small>`;
+      updatesContainer.prepend(div);
+    }
 
-    <div class="stats-bar">
-        <div class="stat-item"><h2>25+</h2><p>Years of Excellence</p></div>
-        <div class="stat-item"><h2 style="color: var(--secondary);">70+</h2><p>Professional Staff</p></div>
-        <div class="stat-item"><h2>50+</h2><p>Student Leaders</p></div>
-        <div class="stat-item"><h2 style="color: #d97706;">1.5k</h2><p>Active Scholars</p></div>
-    </div>
+    async function loadInitialUpdates() {
+      const { data, error } = await supabaseClient
+        .from('updates')
+        .select('*')
+        .order('created_at', { ascending: false });
 
-    <section class="section director-section" id="director">
-        <div class="director-img-wrapper">
-            <img src="PRINCIPAL.jpg" alt="Director Ssemaganda Ronald" onerror="this.src='https://via.placeholder.com/400x500?text=Director+Ronald'">
-        </div>
-        <div>
-            <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 15px; color: var(--primary);">Word from the Director</h2>
-            <p style="font-size: 1.1rem; font-style: italic; color: var(--primary); margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 15px;">"Guided by our core value to <strong>Strive to Excel</strong>, we nurture every student's potential with integrity."</p>
-            <p>Welcome to Namungoona High School. Under the leadership of <strong>Ssemaganda Ronald</strong>, we focus on a holistic approach to education—ensuring every student is spiritually, mentally, and physically prepared for the world.</p>
-            <p style="margin-top: 15px; font-weight: 700; color: var(--primary);">- HON. SSEMAGANDA RONALD</p>
-            
-            <div class="bursary-alert-container">
-                <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--accent);"></i>
-                <div>
-                    <h3 class="serif" style="color: var(--accent); font-size: 1.2rem;">Academic Bursaries Available</h3>
-                    <p style="font-size: 0.85rem; opacity: 0.9;">We are offering special bursary spots for talented, high-performing students who continue to Strive to Excel.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      if (error) {
+        console.error('Error loading updates:', error);
+        updatesContainer.innerHTML = '<p>Failed to load updates.</p>';
+      } else {
+        displayUpdates(data);
+      }
+    }
 
-    <section id="values" style="padding: 90px 8%; background: var(--light); text-align: center;">
-        <h2 class="serif" style="font-size: 2.5rem; margin-bottom: 40px; color: var(--primary);">Vision, Mission & Core Values</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
-            <div style="background: white; padding: 35px 25px; border-radius: var(--radius); max-width: 320px; box-shadow: var(--shadow); border: 1px solid #e2e8f0;">
-                <i class="fas fa-eye" style="font-size: 2rem; color: var(--primary); margin-bottom: 15px;"></i>
-                <h3 class="serif" style="color: var(--primary); margin-bottom: 10px;">Our Vision</h3>
-                <p style="font-size: 0.95rem; color: var(--gray-muted);">To become a leading center of academic excellence in secondary education.</p>
-            </div>
-            <div style="background: white; padding: 35px 25px; border-radius: var(--radius); max-width: 320px; box-shadow: var(--shadow); border: 1px solid #e2e8f0;">
-                <i class="fas fa-bullseye" style="font-size: 2rem; color: var(--secondary); margin-bottom: 15px;"></i>
-                <h3 class="serif" style="color: var(--primary); margin-bottom: 10px;">Our Mission</h3>
-                <p style="font-size: 0.95rem; color: var(--gray-muted);">Impact affordable qualitative skilled knowledge through viable and reliable means for sustainable learners.</p>
-            </div>
-            <div style="background: white; padding: 35px 25px; border-radius: var(--radius); max-width: 320px; box-shadow: var(--shadow); border: 1px solid #e2e8f0;">
-                <i class="fas fa-star" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-                <h3 class="serif" style="color: var(--primary); margin-bottom: 10px;">Core Motto</h3>
-                <p style="font-size: 0.95rem; color: var(--gray-muted);"><strong>Strive to Excel</strong> through Integrity, Discipline, Responsibility, Transparency, and Godliness.</p>
-            </div>
-        </div>
-    </section>
+    // Real-time listener for multi-device sync
+    supabaseClient
+      .channel('public:updates')
+      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'updates' }, (payload) => {
+        appendNewUpdateToUI(payload.new);
+      })
+      .subscribe();
 
-    <section class="sector-section" id="sectors">
-        <div class="info-card">
-            <img src="OLEVEL.jpg" alt="O Level" class="card-img" onerror="this.src='https://via.placeholder.com/400x250?text=O+Level+Section'">
-            <div class="card-body">
-                <h3 class="serif" style="color: var(--primary); margin-bottom: 10px;">O' Level Section</h3>
-                <p style="font-size: 0.9rem; color: var(--gray-muted);">Lower secondary curriculum emphasizing fundamental sciences, humanities, and critical hands-on vocational modules.</p>
-            </div>
-        </div>
-        <div class="info-card">
-            <img src="ALEVEL.jpg" alt="A Level" class="card-img" onerror="this.src='https://via.placeholder.com/400x250?text=A+Level+Section'">
-            <div class="card-body">
-                <h3 class="serif" style="color: var(--primary); margin-bottom: 10px;">A' Level Section</h3>
-                <p style="font-size: 0.9rem; color: var(--gray-muted);">Advanced secondary curriculum focusing on specialized subject combinations in sciences and arts.</p>
-            </div>
-        </div>
-        <div class="info-card">
-            <img src="BOARDING.jpg" alt="Boarding" class="card-img" onerror="this.src='https://via.placeholder.com/400x250?text=Boarding+Facilities'">
-            <div class="card-body">
-                <h3 class="serif" style="color: var(--primary); margin-bottom: 10px;">Boarding Sector</h3>
-                <p style="font-size: 0.9rem; color: var(--gray-muted);">Safe, secure, and highly disciplined residential facilities providing a comfortable environment to Strive to Excel.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="admission-section" id="admissions">
-        <div class="portal-info">
-            <div class="mis-card">
-                <h3 class="serif" style="color: var(--accent); margin-bottom: 15px; font-size: 1.8rem;">Digital School MIS</h3>
-                <p style="opacity: 0.9;">Namungoona High School utilizes an advanced Management Information System (MIS) to connect the school directly with parents.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> <strong>E-Results:</strong> Instant termly report access.</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> <strong>Fees Tracking:</strong> Monitor fee balances online.</li>
-                    <li><i class="fas fa-check-circle" style="color:var(--accent);"></i> <strong>Digital Student IDs:</strong> Automated student registry.</li>
-                </ul>
-                <a href="https://mis.nhs.ac.ug" target="_blank" class="btn-secondary" style="display: flex; text-align: center; margin-top: 25px;"><i class="fas fa-external-link-alt"></i> Access MIS Portal</a>
-            </div>
-
-            <div id="admission-form-wrapper">
-                <form id="main-admission-form" class="admission-form">
-                    <h2>Online Application Form</h2>
-                    
-                    <div class="form-group">
-                        <label>Student's Full Name</label>
-                        <input type="text" id="student-name" required placeholder="As on PLE/UCE result slip">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Gender</label>
-                        <select id="student-gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Date of Birth</label>
-                        <input type="date" id="student-dob" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Class Applying For</label>
-                        <select id="student-class">
-                            <option value="S1">Senior 1</option>
-                            <option value="S2">Senior 2</option>
-                            <option value="S3">Senior 3</option>
-                            <option value="S4">Senior 4</option>
-                            <option value="S5">Senior 5</option>
-                            <option value="S6">Senior 6</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Combination / Subjects</label>
-                        <input type="text" id="student-combination" placeholder="e.g. PCM/ICT or General">
-                    </div>
-
-                    <div class="form-group">
-                        <label>UNEB Index Number</label>
-                        <input type="text" id="index-number" placeholder="e.g. U1256/001">
-                    </div>
-
-                    <div class="form-full form-group">
-                        <label>Former School Name</label>
-                        <input type="text" id="prev-school" placeholder="Previous school attended">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Parent/Guardian Name</label>
-                        <input type="text" id="parent-name" required placeholder="Full Name">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Primary Phone Contact</label>
-                        <input type="tel" id="parent-contact" required placeholder="+256...">
-                    </div>
-
-                    <div class="form-full form-group">
-                        <label>Guardian's Email Address</label>
-                        <input type="email" id="parent-email" placeholder="example@mail.com">
-                    </div>
-
-                    <button type="submit" class="submit-btn" id="admSubmitButton">Submit Application Packet</button>
-                </form>
-
-                <div id="success-section">
-                    <i class="fas fa-check-circle" style="font-size: 4rem; color: #25d366; margin-bottom: 20px;"></i>
-                    <h2 class="serif" style="color: var(--primary);">Application Received!</h2>
-                    <p style="color: var(--gray-muted); margin-top: 10px;">Your application packet has been registered inside our central registry pipeline. Remember to <strong>Strive to Excel</strong>!</p>
-                    <button class="btn-secondary" style="margin-top: 25px;" onclick="resetAdmissionView()">Submit Another Application</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="news-section">
-        <h2 class="serif" style="font-size: 2.5rem; text-align: center; color: var(--primary);">News & Events</h2>
-        <p style="text-align: center; color: var(--gray-muted); margin-top: 5px;">Stay updated with campus activities — Strive to Excel</p>
-        <div class="news-grid" id="newsArticlesContainer"></div>
-    </section>
-
-    <section id="contact-us" class="contact-container">
-        <div>
-            <h2 class="serif" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 15px;">Contact Us</h2>
-            <p style="color: var(--gray-muted); margin-bottom: 25px;">Have questions regarding admissions, fees, or visits? Send us a direct message.</p>
-            <div style="margin-bottom: 15px;"><i class="fas fa-clock" style="color: var(--secondary); margin-right: 10px;"></i> Mon - Fri: 8:00 AM - 5:00 PM</div>
-            <div><i class="fas fa-envelope" style="color: var(--secondary); margin-right: 10px;"></i> namungoonahighschool@gmail.com</div>
-        </div>
-
-        <form action="https://formspree.io/f/mojrlqgw" method="POST" style="background: var(--light); padding: 35px; border-radius: var(--radius); border: 1px solid #e2e8f0;">
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label>Your Name</label>
-                <input type="text" name="name" required placeholder="Enter full name">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label>Email Address</label>
-                <input type="email" name="_replyto" required placeholder="Enter email">
-            </div>
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label>Message</label>
-                <textarea name="message" rows="4" required placeholder="Type your message here..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-        </form>
-    </section>
-
-    <section class="admin-dashboard-section" id="adminConsoleDeck">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); padding-bottom: 15px; margin-bottom: 25px;">
-            <h2 class="serif" style="font-size: 1.8rem; color: var(--accent);">NHS Central Management Console</h2>
-            <button class="btn-primary" onclick="logoutAdminSystem()"><i class="fas fa-sign-out-alt"></i> Exit Console</button>
-        </div>
-        
-        <div class="admin-grid">
-            <div class="admin-panel-card">
-                <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;"><i class="fas fa-plus-circle"></i> Publish News & Media</h3>
-                <input type="text" id="adm-news-title" class="admin-input" placeholder="Article Title">
-                <input type="text" id="adm-news-date" class="admin-input" placeholder="Publication Date (e.g., June 15, 2026)">
-                
-                <label style="font-size: 0.8rem; font-weight:700; color: var(--accent); display:block; margin-bottom: 5px;">Select Photo from Device Storage:</label>
-                <input type="file" id="adm-news-file" accept="image/*" class="admin-input" style="padding: 8px;">
-                
-                <textarea id="adm-news-desc" class="admin-input" style="min-height: 100px;" placeholder="Article Description..."></textarea>
-                <button class="btn-secondary" style="width: 100%;" onclick="publishNewsCardRuntime()"><i class="fas fa-upload"></i> Publish to Feed</button>
-            </div>
-            
-            <div class="admin-panel-card">
-                <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;"><i class="fas fa-database"></i> Applications Ledger</h3>
-                <div id="adminDataLedgerWrapper" style="max-height: 450px; overflow-y: auto;"></div>
-            </div>
-        </div>
-    </section>
-
-    <footer style="background: #031222; color: white; padding: 70px 8% 25px 8%; font-size: 0.9rem; border-top: 4px solid var(--secondary);">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
-            <div>
-                <img src="SCHOOL BADGE.png" alt="Badge" style="height: 75px; margin-bottom: 15px; filter: brightness(0) invert(1);" onerror="this.src='https://via.placeholder.com/80?text=NHS'">
-                <p style="opacity: 0.8; line-height: 1.8;">Namungoona High School is a premier educational institution dedicated to academic excellence, spiritual growth, and moral discipline since 1999.</p>
-                <p style="margin-top: 10px; color: var(--accent); font-weight: 700; letter-spacing: 1px;">MOTTO: STRIVE TO EXCEL</p>
-            </div>
-            <div>
-                <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;">Quick Links</h3>
-                <p style="margin-bottom: 8px;"><a href="#home" style="color: #cbd5e1; text-decoration: none;">Portal Home</a></p>
-                <p style="margin-bottom: 8px;"><a href="#director" style="color: #cbd5e1; text-decoration: none;">Director's Office</a></p>
-                <p style="margin-bottom: 8px;"><a href="#sectors" style="color: #cbd5e1; text-decoration: none;">Curriculum & Sectors</a></p>
-                <p style="margin-bottom: 8px;"><a href="#admissions" style="color: #cbd5e1; text-decoration: none;">Online Admissions</a></p>
-                <p><a href="https://mis.nhs.ac.ug" target="_blank" style="color: #cbd5e1; text-decoration: none;">MIS Portal</a></p>
-            </div>
-            <div>
-                <h3 class="serif" style="color: var(--accent); margin-bottom: 20px;">Contact Channels</h3>
-                <p style="margin-bottom: 10px;"><i class="fas fa-phone" style="color: var(--accent);"></i> +256 700 627 960 / +256 788 772 660</p>
-                <p style="margin-bottom: 10px;"><i class="fas fa-envelope" style="color: var(--accent);"></i> namungoonahighschool@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt" style="color: var(--accent);"></i> Hoima Road, Nakibinge Stage, Kampala, Uganda</p>
-            </div>
-        </div>
-        <div style="text-align: center; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.8;">
-            <p>© 2026 Namungoona High School. All Rights Reserved. Strive to Excel.</p>
-            <p style="margin-top: 5px; color: var(--accent); font-weight: 600; letter-spacing: 1px;">Developed by OscTok Technologies</p>
-        </div>
-    </footer>
-
-    <div class="back-to-top" id="scrollTopBtn" onclick="scrollToTopHead()"><i class="fas fa-arrow-up"></i></div>
-
-    <div class="whatsapp-float" onclick="window.open('https://wa.me/256700627960?text=Hello%20Namungoona%20High%20School%20Admissions%20Office','_blank')">
-        <i class="fab fa-whatsapp"></i>
-    </div>
-
-    <script>
-        // SUPABASE CLIENT INITIALIZATION
-        const SUPABASE_URL = "https://qyzjjxnjieyinqtiolyw.supabase.co";
-        const SUPABASE_KEY = "sb_publishable_QowhVrnPfN-_IYe0_zwFZA_HTIMRqoi";
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        // SLIDESHOW ENGINE
-        let currentSlideIndex = 0;
-        const heroSlides = document.querySelectorAll('.hero .slide');
-        function cycleSlideshow() {
-            if(heroSlides.length === 0) return;
-            heroSlides[currentSlideIndex].classList.remove('active');
-            currentSlideIndex = (currentSlideIndex + 1) % heroSlides.length;
-            heroSlides[currentSlideIndex].classList.add('active');
-        }
-        setInterval(cycleSlideshow, 4000);
-
-        // SCROLL CONTROLLER
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('mainHeader');
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-                scrollTopBtn.style.display = 'flex';
-            } else {
-                header.classList.remove('scrolled');
-                scrollTopBtn.style.display = 'none';
-            }
-        });
-
-        // MENU TOGGLE
-        function toggleMenu(id) {
-            document.getElementById(id).classList.toggle('active');
-        }
-
-        function scrollToTopHead() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // ADMISSIONS DATABASE SUBMISSION
-        document.getElementById('main-admission-form').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const submitBtn = document.getElementById('admSubmitButton');
-            submitBtn.disabled = true;
-            submitBtn.innerText = "Transmitting Packet...";
-
-            const payload = {
-                student_name: document.getElementById('student-name').value.trim(),
-                gender: document.getElementById('student-gender').value,
-                class_level: document.getElementById('student-class').value,
-                parent_name: document.getElementById('parent-name').value.trim(),
-                parent_contact: document.getElementById('parent-contact').value.trim(),
-                parent_email: document.getElementById('parent-email').value.trim() || 'N/A',
-                previous_school: document.getElementById('prev-school').value.trim() || 'N/A',
-                date_of_birth: document.getElementById('student-dob').value,
-                combination: document.getElementById('student-combination').value.trim() || 'N/A',
-                index_number: document.getElementById('index-number').value.trim() || 'N/A',
-                created_at: new Date().toISOString()
-            };
-
-            try {
-                const { error } = await supabaseClient.from('applications').insert([payload]);
-                if (error) throw error;
-
-                document.getElementById('main-admission-form').style.display = 'none';
-                document.getElementById('success-section').style.display = 'block';
-                document.getElementById('main-admission-form').reset();
-                
-                if(document.getElementById('adminConsoleDeck').style.display === 'block') {
-                    renderAdminLedgerData();
-                }
-            } catch (err) {
-                alert("Database Submission Error: " + err.message);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerText = "Submit Application Packet";
-            }
-        });
-
-        function resetAdmissionView() {
-            document.getElementById('success-section').style.display = 'none';
-            document.getElementById('main-admission-form').style.display = 'grid';
-        }
-
-        // SECURE ADMIN ACCESS WORKFLOW
-        function promptAdminLogin() {
-            const inputPass = prompt("Enter Administration Access Keyphrase:");
-            if (!inputPass) return;
-            
-            // Keyphrase: nhsadmin2026
-            if (inputPass === "nhsadmin2026") {
-                alert("Identity verified. Loading Administration Workspace.");
-                if(document.getElementById('mobileNav').classList.contains('active')) {
-                    toggleMenu('mobileNav');
-                }
-                document.getElementById('adminConsoleDeck').style.display = 'block';
-                renderAdminLedgerData();
-                document.getElementById('adminConsoleDeck').scrollIntoView({ behavior: 'smooth' });
-            } else {
-                alert("Access Denied: Invalid Access Keyphrase.");
-            }
-        }
-
-        function logoutAdminSystem() {
-            document.getElementById('adminConsoleDeck').style.display = 'none';
-            alert("Admin session terminated safely.");
-            scrollToTopHead();
-        }
-
-        // RENDER APPLICATIONS IN ADMIN CONSOLE
-        async function renderAdminLedgerData() {
-            const container = document.getElementById('adminDataLedgerWrapper');
-            container.innerHTML = "<p style='color:var(--accent); font-size:0.85rem;'>Fetching submitted records from cloud database...</p>";
-            
-            try {
-                const { data, error } = await supabaseClient
-                    .from('applications')
-                    .select('*')
-                    .order('created_at', { ascending: false });
-
-                if (error) throw error;
-
-                if (!data || data.length === 0) {
-                    container.innerHTML = "<p style='opacity:0.6; padding:10px;'>No submission records found.</p>";
-                    return;
-                }
-
-                container.innerHTML = "";
-                data.forEach((item) => {
-                    const itemDiv = document.createElement('div');
-                    itemDiv.style.cssText = "background: rgba(255,255,255,0.08); padding: 15px; border-radius: 8px; margin-bottom: 12px; font-size: 0.85rem; position: relative; border: 1px solid rgba(255,255,255,0.1);";
-                    itemDiv.innerHTML = `
-                        <button style="position:absolute; right:12px; top:12px; background:var(--secondary); color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer; font-weight:600;" onclick="deleteApplication('${item.id}')">Delete</button>
-                        <strong style="color:var(--accent);">Candidate:</strong> ${item.student_name} (${item.gender})<br>
-                        <strong>Class:</strong> ${item.class_level} | <strong>Index:</strong> ${item.index_number}<br>
-                        <strong>Parent:</strong> ${item.parent_name} (${item.parent_contact})<br>
-                        <strong>Former School:</strong> ${item.previous_school}<br>
-                        <span style='opacity:0.5; font-size:0.75rem; display:block; margin-top:5px;'>Submitted: ${new Date(item.created_at).toLocaleString()}</span>
-                    `;
-                    container.appendChild(itemDiv);
-                });
-            } catch (err) {
-                container.innerHTML = `<p style='color:var(--secondary);'>Ledger Sync Failed: ${err.message}</p>`;
-            }
-        }
-
-        async function deleteApplication(id) {
-            if (confirm("Permanently delete this record from the central database?")) {
-                try {
-                    const { error } = await supabaseClient.from('applications').delete().eq('id', id);
-                    if (error) throw error;
-                    renderAdminLedgerData();
-                } catch (err) {
-                    alert("Delete operation failed: " + err.message);
-                }
-            }
-        }
-
-        // MEDIA FILE & NEWS PUBLISHING ENGINE
-        function publishNewsCardRuntime() {
-            const title = document.getElementById('adm-news-title').value.trim();
-            const date = document.getElementById('adm-news-date').value.trim();
-            const fileInput = document.getElementById('adm-news-file');
-            const desc = document.getElementById('adm-news-desc').value.trim();
-
-            if(!title || !date || !desc) {
-                alert("Title, Date, and Description fields are required.");
-                return;
-            }
-
-            const executeSave = (imageDataUrl) => {
-                const newArticle = { 
-                    id: Date.now(), 
-                    title, 
-                    date, 
-                    img: imageDataUrl || "mine.jpg", 
-                    desc 
-                };
-
-                let currentArticles = JSON.parse(localStorage.getItem('nhs_articles')) || [];
-                currentArticles.unshift(newArticle);
-                localStorage.setItem('nhs_articles', JSON.stringify(currentArticles));
-
-                document.getElementById('adm-news-title').value = '';
-                document.getElementById('adm-news-date').value = '';
-                document.getElementById('adm-news-file').value = '';
-                document.getElementById('adm-news-desc').value = '';
-
-                alert("Media & news article published successfully!");
-                renderNewsArticles();
-            };
-
-            if (fileInput.files && fileInput.files[0]) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    executeSave(e.target.result);
-                };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                executeSave(null);
-            }
-        }
-
-        function renderNewsArticles() {
-            const container = document.getElementById('newsArticlesContainer');
-            if(!container) return;
-            
-            let articles = JSON.parse(localStorage.getItem('nhs_articles')) || [];
-            if(articles.length === 0) {
-                container.innerHTML = `
-                    <div class="news-card">
-                        <img src="mine.jpg" alt="News" onerror="this.src='https://via.placeholder.com/400x250?text=Namungoona+High+School'">
-                        <div class="news-card-body">
-                            <span style="color:var(--secondary); font-weight:700; font-size:0.8rem; letter-spacing:1px;">ANNOUNCEMENT</span>
-                            <h3 class="serif" style="color:var(--primary); margin: 8px 0;">Term Admissions Open</h3>
-                            <p style="color:var(--gray-muted); font-size:0.9rem;">Applications for new candidates are ongoing across both O and A level sections. Strive to Excel with us!</p>
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-
-            container.innerHTML = "";
-            articles.forEach((item) => {
-                const card = document.createElement('div');
-                card.className = 'news-card';
-                card.innerHTML = `
-                    <img src="${item.img}" alt="News Image" onerror="this.src='https://via.placeholder.com/400x250?text=Namungoona+High+School'">
-                    <div class="news-card-body">
-                        <span style="color:var(--secondary); font-weight:700; font-size:0.8rem; letter-spacing:1px;">${item.date}</span>
-                        <h3 class="serif" style="color:var(--primary); margin: 8px 0;">${item.title}</h3>
-                        <p style="color:var(--gray-muted); font-size:0.9rem;">${item.desc}</p>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderNewsArticles();
-        });
-    </script>
+    // Load data on start
+    loadInitialUpdates();
+  </script>
 </body>
 </html>
