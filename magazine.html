@@ -1,188 +1,1045 @@
-<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>THE 2026 NHS BELL MAGAZINE - Premium Digital Edition</title>    <!-- Premium Google Fonts for Calligraphy & High-End Stationery Typography -->    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">    <!-- Font Awesome Pro Icons -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">        <style>        :root {            /* Luxury Wedding Card Palette */            --primary: #0A2342;       /* Deep Royal Navy */            --accent: #D4AF37;        /* Metallic Foil Gold */            --accent-light: #F4E8C1;  /* Silk Champagne Gold */            --bg-cream: #FCFBF7;      /* Matte Ivory Paper */            --bg-white: #FFFFFF;      /* Pure Alabaster */            --text-main: #1C2530;     /* Charcoal Print Ink */            --text-muted: #5A6573;
-            /* Vibrant Academic & Lifestyle Sub-Tokens */            --neon-teal: #00A896;            --vibrant-orange: #FF6B35;            --royal-purple: #4A154B;        }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namungoona High School Constitution</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fbc02d'%3E%3Cpath d='M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3z'/%3E%3C/svg%3E">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #003366; /* Classic School Blue */
+            --secondary-color: #f1c40f; /* Accent Gold */
+            --accent-red: #e74c3c; /* Magazine Brand Red */
+            --text-dark: #2c3e50;
+            --text-muted: #7f8c8d;
+            --surface-light: #ffffff;
+            --bg-off-white: #f8fafc;
+            --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --whatsapp: #25d366;
+        }
+
         * {
-            margin: 0;            padding: 0;            box-sizing: border-box;            scroll-behavior: smooth;        }
-        body {            background-color: var(--bg-cream);            color: var(--text-main);            font-family: 'Montserrat', sans-serif;            overflow-x: hidden;        }
-        /* --- CALLIGRAPHY UTILITY --- */        .calligraphy {            font-family: 'Pinyon Script', cursive;            font-size: 3.5rem;            color: var(--accent);            line-height: 1;            text-transform: none !important;            letter-spacing: 0 !important;        }
-        /* --- PREMIUM STATIC COVER OVERLAY --- */        .mag-cover {            background: linear-gradient(rgba(10, 35, 66, 0.95), rgba(6, 22, 41, 0.98)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;            color: white;            padding: 60px 20px;            text-align: center;            border-bottom: 5px solid var(--accent);            position: relative;        }
-        .badge-wrapper {            width: 100px;            height: 100px;            margin: 0 auto 15px;            background: var(--bg-white);            border-radius: 50%;            padding: 6px;            border: 2px solid var(--accent);            display: flex;            align-items: center;            justify-content: center;        }
-        .badge-wrapper img {            width: 100%;            height: 100%;            object-fit: contain;        }
-        .school-name {            font-family: 'Cinzel', serif;            font-size: 2.2rem;            letter-spacing: 2px;            text-transform: uppercase;        }
-        .magazine-title-banner {            font-family: 'Cinzel', serif;            font-size: 3.2rem;            font-weight: 900;            color: var(--accent);            letter-spacing: 3px;            margin: 10px 0;            text-shadow: 0px 4px 15px rgba(0,0,0,0.5);        }
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-off-white);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
 
-        /* --- REPEATED HEADER STYLES FOR SECTIONS --- */        .section-header-banner {            background: linear-gradient(rgba(10, 35, 66, 0.95), rgba(6, 22, 41, 0.98)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;            color: white;            padding: 40px 20px;            text-align: center;            border-top: 3px solid var(--accent);            border-bottom: 3px solid var(--accent);            margin-top: 50px;            margin-bottom: 30px;        }
-        .section-header-banner .badge-wrapper {            width: 70px;            height: 70px;            margin: 0 auto 10px;        }
-        .section-header-banner .school-name {            font-size: 1.5rem;        }
-        .section-header-banner .magazine-title-banner {            font-size: 2.2rem;            margin: 5px 0;        }
+        h1, h2, h3 { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 700; 
+        }
 
-        /* --- HIGH-END BOOK-FLIP ROUTING INTERFACE --- */        .archive-nav {            background: var(--primary);            position: sticky;            top: 0;            z-index: 1000;            border-bottom: 3px solid var(--accent);            display: flex;            justify-content: center;            gap: 10px;            padding: 15px 10px;            overflow-x: auto;            white-space: nowrap;        }
-        .nav-tab {            color: var(--accent-light);            background: transparent;            border: 1px solid rgba(212, 175, 55, 0.3);            font-family: 'Cinzel', serif;            font-size: 0.8rem;            font-weight: 700;            text-transform: uppercase;            letter-spacing: 1px;            padding: 8px 18px;            cursor: pointer;            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);        }
-        .nav-tab:hover, .nav-tab.active-tab {            color: var(--primary);            background: var(--accent);            border-color: var(--accent);            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);        }
-        /* --- MULTI-PAGE VIEWPORT ENGINE --- */        .magazine-viewport {            max-width: 1400px;            margin: 40px auto 80px;            padding: 0 25px;            min-height: 600px;            position: relative;        }
-        /* Page Shells: Hidden by Default, Animated via JS Switching */        .magazine-page {            display: none;            opacity: 0;            transform: translateY(20px);            transition: opacity 0.5s ease, transform 0.5s ease;        }
-        .magazine-page.active-page {            display: block;            opacity: 1;            transform: translateY(0);        }
-        /* --- SECTION DESIGN ELEMENTS (WEDDING SUITE INSET EFFECT) --- */        .editorial-frame {            background: var(--bg-white);            border: 1px solid var(--accent);            padding: 50px;            position: relative;            box-shadow: 0 30px 70px rgba(10,35,66,0.03);            display: grid;            grid-template-columns: 1fr 2fr;            gap: 50px;        }
-        .editorial-frame::after {            content: '';            position: absolute;            top: 12px; left: 12px; right: 12px; bottom: 12px;            border: 1px solid rgba(214, 175, 55, 0.3);            pointer-events: none;        }
-        @media (max-width: 992px) {            .editorial-frame { grid-template-columns: 1fr; padding: 25px; }        }
-        .profile-box {            border: 1px solid var(--accent);            padding: 12px;            background: var(--bg-cream);            text-align: center;        }
-        .profile-box img {            width: 100%;            height: 350px;            object-fit: cover;            border: 1px solid rgba(214, 175, 55, 0.2);        }
-        /* Page Layout Architecture Dividers */        .page-header-divider {            text-align: center;            margin-bottom: 30px;            position: relative;        }
-        .page-header-divider h2 {            font-family: 'Cinzel', serif;            font-size: 2.5rem;            color: var(--primary);            background: var(--bg-cream);            display: inline-block;            padding: 0 35px;            position: relative;            z-index: 5;            letter-spacing: 2px;        }
-        .page-header-divider::before {            content: '';            position: absolute;            top: 50%; left: 0; width: 100%; height: 1px;            background: linear-gradient(to right, transparent, var(--accent), transparent);            z-index: 1;        }
-        /* --- CARD GRID MASTER SCHEMES --- */        .grid-layout-3 {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));            gap: 40px;        }
-        .luxury-card-inset {            background: var(--bg-white);            border: 1px solid rgba(214, 175, 55, 0.25);            padding: 35px;            position: relative;            box-shadow: 0 10px 30px rgba(0,0,0,0.01);        }
-        .luxury-card-inset h3 {            font-family: 'Cinzel', serif;            color: var(--primary);            font-size: 1.4rem;            margin: 15px 0;            border-bottom: 1px solid rgba(214,175,55,0.15);            padding-bottom: 10px;        }
-        /* --- VIBRANT SPREADS (EDUTAINMENT / LIFESTYLE / CREATIVE) --- */        .bright-magazine-grid {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));            gap: 35px;        }
-        .color-pop-card {            color: white;            padding: 40px;            box-shadow: 0 20px 40px rgba(0,0,0,0.05);            position: relative;        }
-        .color-pop-card.teal { background: linear-gradient(135deg, #00A896, #028090); }        .color-pop-card.orange { background: linear-gradient(135deg, #FF6B35, #E84855); }        .color-pop-card.purple { background: linear-gradient(135deg, #4A154B, #6B2D5C); }
-        .color-pop-card h3 {            font-family: 'Cinzel', serif;            font-size: 1.5rem;            margin-bottom: 15px;        }
-        .premium-list {            list-style: none;        }
-        .premium-list li {            padding: 12px 0;            border-bottom: 1px solid rgba(255,255,255,0.15);            display: flex;            justify-content: space-between;            font-size: 0.95rem;        }
-        .luxury-card-inset .premium-list li {            border-bottom: 1px solid rgba(10,35,66,0.06);        }
-        /* --- PREFECTS & STUDENT TESTIMONIAL SUITE --- */        .student-showcase-matrix {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));            gap: 30px;        }
-        .student-profile-node {            background: white;            border: 1px solid var(--accent);            padding: 20px;            text-align: center;            box-shadow: 0 15px 35px rgba(0,0,0,0.02);        }
-        .student-profile-node img {            width: 100%;            height: 280px;            object-fit: cover;            border-bottom: 4px solid var(--accent);        }
-        .quote-block {            font-family: 'Playfair Display', serif;            font-style: italic;            font-size: 0.95rem;            color: var(--text-main);            margin-top: 15px;            line-height: 1.6;        }
-        /* --- DIGITAL PHOTO ALBUM LAYER --- */        .gallery-masonry {            display: grid;            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));            gap: 20px;        }
-        .gallery-node {            position: relative;            height: 220px;            overflow: hidden;            border: 1px solid var(--accent);        }
-        .gallery-node img {            width: 100%;            height: 100%;            object-fit: cover;            transition: transform 0.5s ease;        }
-        .gallery-node:hover img {            transform: scale(1.08);        }
-        .gallery-tag-banner {            position: absolute;            bottom: 0; left: 0; right: 0;            background: rgba(10, 35, 66, 0.95);            color: white;            padding: 12px;            font-size: 0.75rem;            text-transform: uppercase;            letter-spacing: 1px;            text-align: center;        }
-        /* --- ACTION ROUTING NAVIGATION BUTTON --- */        .page-turner-action {            display: flex;            justify-content: flex-end;            margin-top: 40px;        }
-        .turn-page-btn {            background: var(--primary);            color: var(--accent);            border: 1px solid var(--accent);            padding: 12px 30px;            font-family: 'Cinzel', serif;            font-size: 0.85rem;            font-weight: bold;            cursor: pointer;            letter-spacing: 2px;            text-transform: uppercase;            transition: all 0.3s ease;            display: flex;            align-items: center;            gap: 10px;        }
-        .turn-page-btn:hover {            background: var(--accent);            color: var(--primary);        }
-        /* --- METROPOLITAN FOIL FOOTER --- */        .premium-footer {            background: #061629;            color: #E2E8F0;            padding: 80px 20px 40px;            border-top: 5px solid var(--accent);        }
-        .footer-grid {            max-width: 1400px;            margin: 0 auto;            display: grid;            grid-template-columns: 1.5fr 1fr 1fr;            gap: 40px;            border-bottom: 1px solid rgba(255,255,255,0.08);            padding-bottom: 40px;        }
-        @media (max-width: 768px) {            .footer-grid { grid-template-columns: 1fr; }        }
-        .footer-col h4 {            font-family: 'Cinzel', serif;            color: var(--accent);            margin-bottom: 20px;            text-transform: uppercase;            letter-spacing: 1px;        }    </style></head><body>
-    <!-- CORE MAGAZINE HUB BANNER -->    <header class="mag-cover">        <div class="badge-wrapper">            <img src="SCHOOL BADGE.png" alt="NHS Shield">        </div>        <div class="calligraphy" style="color: var(--accent-light); font-size: 2.8rem; margin-bottom: -10px;">The Premium Portfolio Version of</div>        <h1 class="school-name">Namungoona High School</h1>        <h2 class="magazine-title-banner"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>        <div class="calligraphy" style="font-size:2.2rem; color:var(--accent);">Volume XII • Multi-Page Web Suite</div>    </header>
-    <!-- INTERACTIVE BOOK-FLIP TABS (ACT LIKE UNIQUE PAGES) -->    <nav class="archive-nav">        <button class="nav-tab active-tab" onclick="switchPage('page-editorial', this)">Page 1: Editorial Suite</button>        <button class="nav-tab" onclick="switchPage('page-admin', this)">Page 2: Executive Desk</button>        <button class="nav-tab" onclick="switchPage('page-academics', this)">Page 3: Academic Registry</button>        <button class="nav-tab" onclick="switchPage('page-lifestyle', this)">Page 4: Student Hub</button>        <button class="nav-tab" onclick="switchPage('page-sports', this)">Page 5: Sports Arena</button>        <button class="nav-tab" onclick="switchPage('page-gallery', this)">Page 6: Visual Archives</button>    </nav>
-    <!-- CORE VIEWPORT CONTAINING ALL HIDDEN/DYNAMIC PAGES -->    <main class="magazine-viewport">                <!-- ==================== DIGITAL PAGE 1: EDITORIAL SECTOR ==================== -->        <div id="page-editorial" class="magazine-page active-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Editorial Suite</div>            </div>
+        /* ==========================================================================
+           HEADER & NAVIGATION STYLES
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
 
-            <div class="page-header-divider"><h2>The Editorial Spread</h2></div>            <div class="editorial-frame">                <div class="profile-column">                    <div class="profile-box">                        <img src="1775475982518.png" alt="Kamya Oscar Chief Editor" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80';">                        <div class="calligraphy" style="font-size: 2rem; margin-top:12px;">Chief Editor Note</div>                        <h4 style="font-family:'Cinzel',serif; color:var(--primary); font-size: 1.2rem;">Kamya Oscar</h4>                        <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1px;">Senior Four K (S.4K)</p>                    </div>                </div>                <div class="text-column" style="display:flex; flex-direction:column; justify-content:center;">                    <div class="calligraphy" style="font-size: 2.5rem; text-align:left; margin-bottom:5px;">Welcome Remarks</div>                    <h3 style="font-family:'Cinzel',serif; color:var(--primary); margin-bottom:20px;">Purpose of the 2026 Compilation</h3>                    <p style="text-align:justify; margin-bottom:15px; font-size:0.95rem;">Welcome to the grand literary showcase of 2026. As the chief driver of the editorial assembly, my vision was to layout a highly structural, premium registry that maps out all 28 branches of progress defining Namungoona High School this year.</p>                    <p style="font-style:italic; border-left:3px solid var(--accent); padding-left:15px; color:var(--text-muted); margin-bottom:25px;">"This digital issue operates as a testament to our ongoing scientific expansion along Hoima Road, our record-setting achievements, and the modern legacy built by our active student leadership structures."</p>                                                            <div class="page-turner-action">                        <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[1].click();">Flip to Next Page <i class="fa-solid fa-arrow-right"></i></button>                    </div>                </div>            </div>        </div>
-        <!-- ==================== DIGITAL PAGE 2: ADMINISTRATION ==================== -->        <div id="page-admin" class="magazine-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Executive Desk</div>            </div>
+        .top-bar {
+            background-color: #0b1320;
+            color: #a4b0be;
+            padding: 10px 8%;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
 
-            <div class="page-header-divider"><h2>School Administration</h2></div>            <div class="grid-layout-3">                <div class="luxury-card-inset">                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-user-gear"></i></div>                    <h3>Principal's Executive Message</h3>                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Our primary operational blueprint focuses on high-end resource deployment, ensuring that standard guidelines evolve directly into functional achievements.</p>                </div>                <div class="luxury-card-inset">                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-id-card-clip"></i></div>                    <h3>Deputy Headteacher's Brief</h3>                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Discipline remains our driving framework. By reinforcing strong character development metrics, our students perform exceptionally under pressure.</p>                </div>                <div class="luxury-card-inset">                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-gem"></i></div>                    <h3>Directors' Strategic Remarks</h3>                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Continuing to finance state-of-the-art computer labs, agricultural installations, and extensive safety configurations across the campus network.</p>                </div>            </div>            <div class="page-turner-action">                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[2].click();">Go to Academics <i class="fa-solid fa-arrow-right"></i></button>            </div>        </div>
-        <!-- ==================== DIGITAL PAGE 3: ACADEMICS sector ==================== -->        <div id="page-academics" class="magazine-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Academic Registry</div>            </div>
+        .top-bar-contact span {
+            margin-right: 20px;
+        }
 
-            <div class="page-header-divider"><h2>Academic &amp; Research Division</h2></div>            <div class="grid-layout-3">                <div class="luxury-card-inset" style="border-top:4px solid var(--accent);">                    <h3><i class="fa-solid fa-graduation-cap"></i> Best-Performing Students</h3>                    <ul class="premium-list">                        <li><span>Senior 4 Board: 8 Aggregates</span> <strong style="color:var(--accent);">Div 1 Gold</strong></li>                        <li><span>Senior 6 Board: 20 Points (BCM/Sub)</span> <strong style="color:var(--accent);">National Top</strong></li>                        <li><span>Senior 6 Board: 19 Points (PCM/Sub)</span> <strong style="color:var(--accent);">Elite Level</strong></li>                    </ul>                </div>                <div class="luxury-card-inset">                    <h3><i class="fa-solid fa-star-and-crecent"></i> National Examination Guidance</h3>                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">Deploy precise active-recall testing systems during evening prep blocks. Pay strict attention to specialized layout guidelines from the UNEB assessment board.</p>                </div>                <div class="luxury-card-inset">                    <h3><i class="fa-solid fa-atom"></i> Research &amp; AI Coding Labs</h3>                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">The 2026 ICT and Science Club innovators successfully rolled out customized micro-utility programs, introducing algorithms to the intermediate class blocks.</p>                </div>            </div>            <div class="page-turner-action">                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[3].click();">Open Student Hub <i class="fa-solid fa-arrow-right"></i></button>            </div>        </div>
-        <!-- ==================== DIGITAL PAGE 4: LIFESTYLE & EDUTAINMENT ==================== -->        <div id="page-lifestyle" class="magazine-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Student Hub</div>            </div>
+        .top-bar-contact i {
+            color: var(--secondary-color);
+            margin-right: 6px;
+        }
 
-            <div class="page-header-divider"><h2>The 2026 NHS Bell Hub</h2></div>                        <!-- Vibrant Bright Cluster Layout -->            <div class="bright-magazine-grid" style="margin-bottom: 50px;">                <div class="color-pop-card teal">                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-puzzle-piece"></i></div>                    <h3>4. Edutainment Box</h3>                    <p>Combining challenging brain teasers, educational comics, and riddles aimed at expanding mental processing capabilities.</p>                    <ul class="premium-list">                        <li><span>Logic Word Searches</span> <span>Log 084</span></li>                        <li><span>Weekly Quiz Competitions</span> <span>Rank 01</span></li>                    </ul>                </div>                <div class="color-pop-card orange">                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-clapperboard"></i></div>                    <h3>5. Entertainment &amp; Trends</h3>                    <p>Highlighting favorite campus tracks, viral weekend media review trends, and cultural music festival moments.</p>                    <ul class="premium-list">                        <li><span>Song of Year: Choir Remix</span> <span>Trending</span></li>                        <li><span>Fashion &amp; Grooming Guides</span> <span>Page 112</span></li>                    </ul>                </div>                <div class="color-pop-card purple">                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-pen-nib"></i></div>                    <h3>11. Creative Writing</h3>                    <p>The sanctuary for custom student poetry collections, short stories, inspirational scripts, and composition blocks.</p>                    <ul class="premium-list">                        <li><span>"The Hoima Road Bell" Poem</span> <span>S.4 Writers</span></li>                        <li><span>Alumni Mentorship Essays</span> <span>Archived</span></li>                    </ul>                </div>            </div>
-            <!-- What Students Say with Profile Pictures -->            <div class="calligraphy" style="text-align:center; font-size:2.8rem; margin-bottom:10px;">The Student Voice Box</div>            <div class="student-showcase-matrix">                <div class="student-profile-node">                    <img src="STUDENT1.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80';">                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Natooro Precious</h4>                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Prefect Council Lead</p>                    <p class="quote-block">"Serving in the 2026 school parliament taught me how to lead with absolute integrity. We are standard-bearers."</p>                </div>                <div class="student-profile-node">                    <img src="STUDENT2.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';">                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Kimbugwe Derrick</h4>                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">S.4 Tech Committee</p>                    <p class="quote-block">"The modern computer networks on campus allowed us to design code layouts right inside our daily workshops."</p>                </div>                <div class="student-profile-node">                    <img src="STUDENT3.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80';">                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Aisha Zalwango</h4>                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Senior Five Science</p>                    <p class="quote-block">"The balanced energy between challenging lab reports and weekend musical drama festivals is what makes NHS special."</p>                </div>            </div>                                    <div class="page-turner-action">                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[4].click();">Flip to Sports <i class="fa-solid fa-arrow-right"></i></button>            </div>        </div>
-        <!-- ==================== DIGITAL PAGE 5: SPORTS SECTOR ==================== -->        <div id="page-sports" class="magazine-page">
-            <!-- Section Header Banner Added -->
-            <div class="section-header-banner">
-                <div class="badge-wrapper">
-                    <img src="SCHOOL BADGE.png" alt="NHS Shield">
-                </div>
-                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>
-                <h1 class="school-name">Namungoona High School</h1>
-                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>
-                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Sports Arena</div>
-            </div>
+        .main-nav {
+            background-color: var(--surface-light);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            <div class="page-header-divider"><h2>6. Sports Division Reports</h2></div>
-            <div class="grid-layout-3">
-                <div class="luxury-card-inset">
-                    <h3><i class="fa-solid fa-circle-check"></i> Football Championship</h3>
-                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; text-align:justify;">The NHS First XI maintained an undefeated home campaign, showcasing unmatched technical play along the main Hoima Road arena to win the district cup.</p>
-                </div>
-                <div class="luxury-card-inset">
-                    <h3><i class="fa-solid fa-trophy"></i> Basketball &amp; Netball</h3>
-                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; text-align:justify;">Our sports personalities secured national recognition this year, displaying exceptional training discipline and bringing home trophy accolades.</p>
-                </div>
-                <div class="luxury-card-inset">
-                    <h3><i class="fa-solid fa-heart-pulse"></i> Fitness &amp; Strategic Wellness</h3>
-                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6; text-align:justify;">The wellness department guides players using structured hydration schedules, morning stamina intervals, and modern stress management protocols.</p>
-                </div>
-            </div>
-            <div class="page-turner-action">
-                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[5].click();">View Gallery Archives <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-        <!-- ==================== DIGITAL PAGE 6: PHOTOGRAPHY GALLERY ==================== -->        <div id="page-gallery" class="magazine-page">
-            <!-- Section Header Banner Added -->
-            <div class="section-header-banner">
-                <div class="badge-wrapper">
-                    <img src="SCHOOL BADGE.png" alt="NHS Shield">
-                </div>
-                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>
-                <h1 class="school-name">Namungoona High School</h1>
-                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>
-                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Visual Archives</div>
-            </div>
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-            <div class="page-header-divider"><h2>18. Visual Gallery Archives</h2></div>
-            <div class="gallery-masonry">
-                <div class="gallery-node">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80" alt="Excellence Day">
-                    <div class="gallery-tag-banner">Annual Excellence Day</div>
-                </div>
-                <div class="gallery-node">
-                    <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=500&q=80" alt="Football Trophy">
-                    <div class="gallery-tag-banner">Hoima Road Football Derby</div>
-                </div>
-                <div class="gallery-node">
-                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=500&q=80" alt="Cultural Gala">
-                    <div class="gallery-tag-banner">Cultural Gala Drama Leads</div>
-                </div>
-                <div class="gallery-node">
-                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" alt="Tech Hub">
-                    <div class="gallery-tag-banner">S.4K Tech Innovation Lab</div>
-                </div>
-            </div>
-            <!-- Historical Footer Box Inside Page -->
-            <div class="luxury-card-inset" style="margin-top:50px; background:var(--accent-light); text-align:center;">
-                <h3 style="color:var(--primary);">28. Appreciation &amp; Archive Handover</h3>
-                <p style="font-size:0.95rem; font-weight:500; color:var(--primary); max-width:800px; margin: 0 auto;">Our sincere appreciation goes to the layout developers, academic boards, corporate sponsors, and alumni networks who funded this beautiful 140-page publication system.</p>
-            </div>
-        </div>    </main>
-    <!-- REFINED FOIL FOOTER COMPONENT -->    <footer class="premium-footer">
-        <div class="footer-grid">
-            <div>
-                <h3 style="font-family:'Cinzel',serif; color:var(--accent); margin-bottom:15px; font-size:1.4rem;">Namungoona High School</h3>
-                <p style="color:#A0AAB5; font-size:0.9rem; line-height:1.6;">Dedicated to cultivating top-tier capabilities, rigorous academic fortitude, and moral distinction. Curated to lead, designed to succeed.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Campus Geolocation</h4>
-                <p><i class="fa-solid fa-location-dot" style="color:var(--accent); margin-right:8px;"></i> 5Km along Hoima Rd</p>
-                <p><i class="fa-solid fa-map-pin" style="color:var(--accent); margin-right:8px;"></i> 100M off Nakibinge Stage</p>
-                <p><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> P.O Box 26935, Kampala</p>
-            </div>
-            <div class="footer-col">
-                <h4>Communications Desk</h4>
-                <p><i class="fa-solid fa-phone" style="color:var(--accent); margin-right:8px;"></i> +256 700 627 960</p>
-                <p><i class="fa-solid fa-globe" style="color:var(--accent); margin-right:8px;"></i> www.namungoonahighschool.ac.ug</p>
-            </div>
-        </div>
-        <div style="text-align:center; padding-top:30px; font-size:0.8rem; color:#64748B; letter-spacing:1px;">
-            &copy; 2026 Namungoona High School. THE 2026 NHS BELL MAGAZINE Production Framework. All Rights Reserved.
-        </div>
-    </footer>
-    <!-- INTERACTIVE PAGE CANVAS ENGINE (SPA TABS SWITCHER) -->    <script>
-        function switchPage(pageId, tabElement) {
-            // Remove active classes from all tab buttons
-            document.querySelectorAll('.nav-tab').forEach(tab => {
-                tab.classList.remove('active-tab');
-            });
-                        // Add active class to the clicked tab button
-            tabElement.classList.add('active-tab');
+        .nav-brand img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
 
-            // Hide all pages in the viewport with a quick transition
-            document.querySelectorAll('.magazine-page').forEach(page => {
-                page.classList.remove('active-page');
-            });
+        .brand-text h1 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
 
-            // Target and show the selected page
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active-page');
-                                // Automatically scroll the viewport into position smoothly
-                window.scrollTo({
-                    top: document.querySelector('.archive-nav').offsetTop - 20,
-                    behavior: 'smooth'
-                });
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--primary-color);
+        }
+
+        .portal-btn-nav {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: var(--transition-smooth);
+        }
+
+        .portal-btn-nav:hover {
+            background: var(--secondary-color) !important;
+            color: var(--primary-color) !important;
+        }
+
+        /* Mobile Hamburger Bars */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            transition: 0.3s ease;
+        }
+
+        /* Mobile Viewport Navigation Active Layouts */
+        .mobile-nav-panel {
+            display: none;
+            flex-direction: column;
+            background: var(--primary-color);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            padding: 20px 8%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .mobile-nav-panel a {
+            color: white;
+            padding: 12px 0;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .site-header.mobile-active .mobile-nav-panel {
+            display: flex;
+        }
+
+        /* Institutional Hero Banner Section */
+        .hero-banner {
+            position: relative;
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            color: #f7fafc;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .hero-banner h1 {
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+        .hero-banner p.motto {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-style: italic;
+            margin: 10px 0 25px 0;
+            font-weight: 700;
+            letter-spacing: 1px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Typing Effect Container */
+        .typing-container {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 25px;
+            min-height: 25px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            background-color: var(--secondary-color);
+            margin-left: 4px;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .hero-meta-grid {
+            display: inline-grid;
+            grid-template-columns: repeat(2, auto);
+            gap: 15px 40px;
+            background: rgba(255, 255, 255, 0.06);
+            padding: 18px 35px;
+            border-radius: 12px;
+            border: 1px solid rgba(241, 196, 15, 0.2);
+            font-size: 0.85em;
+            text-align: left;
+        }
+
+        .hero-meta-grid span strong {
+            color: var(--secondary-color);
+        }
+
+        /* Main Structured Layout Split */
+        .main-container {
+            width: 95%;
+            max-width: 1400px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            flex: 1;
+        }
+
+        /* Chapter Quick Navigation Menu Widget */
+        .chapters-widget {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 25px 20px;
+            box-shadow: 0 15px 35px rgba(10, 42, 75, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-top: 6px solid var(--primary-color);
+            height: calc(100vh - 180px);
+            position: sticky;
+            top: 140px;
+            overflow-y: auto;
+        }
+
+        .widget-title {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+        }
+
+        .widget-menu {
+            list-style: none;
+        }
+
+        .widget-link {
+            display: block;
+            padding: 8px 12px;
+            color: #2d3748;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            margin-bottom: 4px;
+        }
+
+        .widget-link:hover {
+            background-color: var(--bg-off-white);
+            color: var(--accent-red);
+            padding-left: 18px;
+            transform: translateX(4px);
+        }
+
+        /* Content Document Block Card */
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 45px;
+            box-shadow: 0 15px 35px rgba(10, 42, 75, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Scroll Animation Transitions */
+        section {
+            scroll-margin-top: 140px;
+            margin-bottom: 55px;
+            border-bottom: 1px dashed #e2e8f0;
+            padding-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        section.reveal-active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Typographic Framework Styling */
+        h2.section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        h3.subsection-title {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-red);
+            padding-left: 12px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 1.8;
+            font-size: 0.92rem;
+            color: #4a5568;
+        }
+
+        /* Mission and Vision Grid Cards */
+        .mission-vision-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .mv-card {
+            background-color: var(--bg-off-white);
+            border-top: 4px solid var(--primary-color);
+            padding: 22px;
+            border-radius: 12px;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(10, 42, 75, 0.06);
+            border-top-color: var(--accent-red);
+        }
+
+        .mv-card h4 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+
+        .mv-card p {
+            font-size: 0.88rem;
+            margin: 0;
+        }
+
+        /* Legal Block Quote Components */
+        .quote-box {
+            background-color: #fcf9f2;
+            border-left: 5px solid var(--secondary-color);
+            padding: 25px;
+            font-style: italic;
+            margin: 35px 0;
+            border-radius: 0 16px 16px 0;
+            transition: 0.3s ease;
+        }
+
+        .quote-box:hover {
+            border-left-color: var(--primary-color);
+            background-color: #f4f7f9;
+        }
+
+        .quote-box strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 5px;
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            font-size: 0.92rem;
+            color: #4a5568;
+        }
+
+        /* Schedule Tables */
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .program-table th, .program-table td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 15px;
+        }
+
+        .program-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .program-table tr:nth-child(even) {
+            background-color: var(--bg-off-white);
+        }
+
+        .program-table tr:hover td {
+            background-color: #f1f5f9;
+        }
+
+        /* Footer Styles Matching Brand Template */
+        .main-footer {
+            background-color: #0b1320;
+            color: #ecf0f1;
+            padding: 80px 8% 30px 8%;
+            font-size: 0.9rem;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .footer-brand p {
+            color: #a4b0be;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            padding-right: 20px;
+            text-align: left;
+        }
+
+        .footer-socials a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-socials a:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-socials a.wa-btn:hover {
+            background: var(--whatsapp);
+            color: #fff;
+        }
+
+        .footer-links h4, .footer-contact h4, .footer-newsletter h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 25px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links h4::after, .footer-contact h4::after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: -8px;
+            width: 35px; height: 2px;
+            background: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links ul li a {
+            color: #a4b0be;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: #a4b0be;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            text-align: left;
+        }
+
+        .footer-contact p i {
+            color: var(--secondary-color);
+            margin-top: 4px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-form input {
+            padding: 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px 0 0 8px;
+            color: #fff;
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            padding: 0 24px;
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid var(--primary-color);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: #7f8c8d;
+            font-size: 0.85rem;
+        }
+
+        .footer-logo {
+            height: 70px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        /* Responsive UI Optimizations */
+        @media (max-width: 1200px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 50px;
             }
         }
-    </script></body></html>
+
+        @media (max-width: 1100px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                width: 95%;
+            }
+            .chapters-widget {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: auto;
+                max-height: 250px;
+            }
+            .hero-banner h1 {
+                font-size: 1.8rem;
+            }
+            .hero-meta-grid {
+                grid-template-columns: 1fr;
+                padding: 15px 20px;
+            }
+            .mission-vision-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .top-bar {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Institutional Header & Navigation Bar -->
+    <header class="site-header" id="header">
+        <div class="top-bar">
+            <div class="top-bar-contact">
+                <span><i class="fa-solid fa-phone"></i> +256 700 627 96 / +256 788 772 660</span>
+                <span><i class="fa-solid fa-envelope"></i> namungoonahighschool@gmail.com</span>
+            </div>
+            <div class="top-bar-socials">
+                <span>Strive to Excel</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-text">
+                    <h1>Namungoona High School</h1>
+                    <span>Institutional Portal</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="SCHOOL GALLERY.html">Gallery</a></li>
+                <li><a href="MAGAZINE.html">Magazine</a></li>
+                <li><a href="constitution.html" class="active" style="color: var(--primary-color);">Constitution</a></li>
+                <li><a href="#" class="portal-btn-nav">Student Portal</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <div class="mobile-nav-panel" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="#">About</a>
+            <a href="SCHOOL GALLERY.html">Gallery</a>
+            <a href="MAGAZINE.html">Magazine</a>
+            <a href="constitution.html">Constitution</a>
+            <a href="#" style="color: var(--secondary-color);">Student Portal</a>
+        </div>
+    </header>
+    
+    <header class="hero-banner" id="home">
+        <h1>Namungoona High School Constitution</h1>
+        <center><p class="motto">“Strive to Excel”</p></center>
+        
+        <div class="typing-container">
+            <span id="typing-text"></span><span class="typing-cursor"></span>
+        </div>
+        
+        <div class="hero-meta-grid">
+            <span><strong>Institution:</strong> Namungoona High School</span>
+            <span><strong>Document:</strong> Formal Legal Framework & Student Constitution</span>
+            <span><strong>Authority:</strong> School Administration & Student Leadership Body</span>
+            <span><strong>Edition:</strong> First Edition (Published 27th June 2026)</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="chapters-widget">
+            <h3 class="widget-title">Table of Contents</h3>
+            <ul class="widget-menu">
+                <li><a href="#preamble" class="widget-link">Preamble & Charter</a></li>
+                <li><a href="#programmes" class="widget-link">Daily Routines & Schedules</a></li>
+                <li><a href="#chapter1" class="widget-link">Ch. 1: General Principles & Core Values</a></li>
+                <li><a href="#chapter2" class="widget-link">Ch. 2: School Court Structure</a></li>
+                <li><a href="#chapter3" class="widget-link">Ch. 3: Detailed Roles of Court Officials</a></li>
+                <li><a href="#chapter4" class="widget-link">Ch. 4: Constitutional Rights of Students</a></li>
+                <li><a href="#chapter5" class="widget-link">Ch. 5: Core Responsibilities & Duties</a></li>
+                <li><a href="#chapter6" class="widget-link">Ch. 6: Prohibited Behaviors & Sanctions</a></li>
+                <li><a href="#prefects" class="widget-link">Ch. 7: Prefectorial Code of Conduct</a></li>
+                <li><a href="#unsa" class="widget-link">Ch. 8: National Student Association (UNSA)</a></li>
+                <li><a href="#chapter7" class="widget-link">Ch. 9: Judicial Processes & Trial Rules</a></li>
+                <li><a href="#chapter8" class="widget-link">Ch. 10: Official Communication Rules</a></li>
+                <li><a href="#chapter9" class="widget-link">Ch. 11: Amendments & Execution</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-card">
+            
+            <section id="preamble">
+                <h2 class="section-title">Preamble & Institutional Charter</h2>
+                <p>We, the students of Namungoona High School, commit ourselves to discipline, respect, responsibility, and academic excellence. These articles guide conduct, and any violation shall attract corrective disciplinary action aimed at building character.</p>
+                
+                <div class="mission-vision-box">
+                    <div class="mv-card">
+                        <h4>Our Mission</h4>
+                        <p>To provide quality education in a disciplined environment, nurturing responsible citizens who strive to excel and contribute positively to society.</p>
+                    </div>
+                    <div class="mv-card">
+                        <h4>Our Vision</h4>
+                        <p>To be a centre of academic excellence and character development, recognized for shaping future leaders with integrity, innovation, and purpose.</p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Our Discipline Code (Core Values & Rules)</h3>
+                <ul>
+                    <li>We respect ourselves, others, and school property.</li>
+                    <li>We are punctual, prepared, and committed to learning.</li>
+                    <li>We Uphold honesty, integrity, and responsibility in all we do.</li>
+                    <li>We maintain a clean, safe, and orderly environment.</li>
+                    <li>We follow school rules and accept consequences.</li>
+                    <li>We reject corruption, bullying, and all forms of misconduct.</li>
+                    <li>We wear our uniform with pride and act as ambassadors of the school.</li>
+                </ul>
+            </section>
+
+            <section id="programmes">
+                <h2 class="section-title">Daily Routines & Institutional Programs</h2>
+                <p>From the time you register with Namungoona High School to the time you leave, your education and welfare are the primary concern of the school. In a community such as this, it is necessary and essential that every member pays absolute regard to the institutional schedule. Common sense dictates that skipping these slots is a major breach of school rules.</p>
+                
+                <h3 class="subsection-title">School Daily Programme</h3>
+                <table class="program-table">
+                    <thead>
+                        <tr>
+                            <th>Time Block</th>
+                            <th>Mandatory Activity Scheduled</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>5:30 AM</td><td>Morning Preps Begin</td></tr>
+                        <tr><td>8:00 AM</td><td>Lessons Begin</td></tr>
+                        <tr><td>10:40 AM – 11:00 AM</td><td>Break Time Block</td></tr>
+                        <tr><td>11:00 AM – 1:00 PM</td><td>Mid-Morning Academic Lessons</td></tr>
+                        <tr><td>1:00 PM – 2:00 PM</td><td>Lunch Time Break</td></tr>
+                        <tr><td>2:00 PM – 4:40 PM</td><td>Afternoon Academic Lessons</td></tr>
+                        <tr><td>4:40 PM – 5:00 PM</td><td>Co-Curricular Activities & Games</td></tr>
+                        <tr><td>7:00 PM – 9:30 PM</td><td>Night Preps Session</td></tr>
+                        <tr><td>11:00 PM</td><td>Boarders Observe Strict Lights Off</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="chapter1">
+                <h2 class="section-title">CHAPTER ONE: GENERAL PRINCIPLES</h2>
+                <h3 class="subsection-title">Article 1: Core Values Expansion</h3>
+                <ul>
+                    <li><strong>Discipline:</strong> Ensures students follow rules, manage behavior, and remain focused on goals, creating an environment where learning thrives.</li>
+                    <li><strong>Respect:</strong> Promotes positive relationships among students, teachers, and leaders, encouraging understanding, tolerance, and proper conduct.</li>
+                    <li><strong>Integrity:</strong> Requires honesty and moral uprightness, ensuring students act truthfully and uphold ethical standards.</li>
+                    <li><strong>Responsibility:</strong> Ensures students are accountable for their actions, duties, and choices.</li>
+                    <li><strong>Justice:</strong> Ensures fairness in all decisions, guaranteeing equal treatment and unbiased judgment.</li>
+                </ul>
+            </section>
+
+            <section id="chapter2">
+                <h2 class="section-title">CHAPTER TWO: STRUCTURE OF THE SCHOOL COURT</h2>
+                <p>To systematically manage discipline, the school institutes a formal judicial branch consisting of specialized desks:</p>
+                <ul>
+                    <li>Chief Judge</li>
+                    <li>Deputy Chief Judge</li>
+                    <li>Prosecutor / Attorney General</li>
+                    <li>Court Clerk</li>
+                    <li>Deputy Court Clerk</li>
+                    <li>The Intelligence Desk System</li>
+                    <li>Advocates / Defense Lawyers</li>
+                    <li>Court Spokesperson</li>
+                </ul>
+            </section>
+
+            <section id="chapter3">
+                <h2 class="section-title">CHAPTER THREE: DETAILED ROLES OF COURT OFFICIALS</h2>
+                
+                <h3 class="subsection-title">Article 3: The Chief Judge</h3>
+                <p>Presides over all court sessions, reviews complex case files, maintains strict order within hearings, delivers final fair judgments based on facts, and oversees the overall execution of duties by other court officials.</p>
+
+                <h3 class="subsection-title">Article 4: The Deputy Chief Judge</h3>
+                <p>Assists the Chief Judge in organizing legal files, supervises the general professional conduct of court members, and steps in to preside over sessions when the Chief Judge is unavailable.</p>
+
+                <h3 class="subsection-title">Article 5: The Prosecutor / Attorney General</h3>
+                <p>The Prosecutor represents the school in legal cases, presenting charges against accused individuals and ensuring justice through proper legal procedures.</p>
+
+                <h3 class="subsection-title">Article 6: The Court Clerk & Deputy Court Clerk</h3>
+                <p>The Court Clerk coordinates records, manages safety structures for court archives, and tracks timeline metrics securely.</p>
+
+                <h3 class="subsection-title">Article 7: The Intelligence Desk</h3>
+                <p>Conducts objective investigations, interviews witnesses regarding incidents, compiles comprehensive investigation findings, and provides early tracking to prevent behavioral misconduct.</p>
+            </section>
+
+            <section id="chapter4">
+                <h2 class="section-title">CHAPTER FOUR: RIGHTS OF STUDENTS</h2>
+                <ul>
+                    <li><strong>Right to a Fair Hearing:</strong> No disciplinary sanction may be applied without a formal investigation and evidentiary hearing.</li>
+                    <li><strong>Right to Legal Representation:</strong> Access to representation by an appointed student advocate/lawyer during trials.</li>
+                    <li><strong>Right to Respectful Treatment:</strong> Absolute protection against abusive language or degrading punishment.</li>
+                </ul>
+            </section>
+
+            <section id="chapter5">
+                <h2 class="section-title">CHAPTER FIVE: DUTIES & RESPONSIBILITIES</h2>
+                <ul>
+                    <li><strong>Obey School Rules:</strong> Unconditionally obey all established parameters outlined in this framework.</li>
+                    <li><strong>Respect Authority Figures:</strong> Demonstrate absolute respect to teachers, administrative staff, and student leadership structures.</li>
+                    <li><strong>Consistent Academic Attendance:</strong> Attend all scheduled classes, preps, assemblies, and official institutional activities.</li>
+                </ul>
+            </section>
+
+            <section id="chapter6">
+                <h2 class="section-title">CHAPTER SIX: PROHIBITED BEHAVIORS & SANCTIONS</h2>
+                <h3 class="subsection-title">Section A: Prohibited Behaviors</h3>
+                <ul>
+                    <li><strong>Drug & Substance Abuse:</strong> Possession or consumption of alcohol, cigarettes, or narcotics. <em>Sanction:</em> Immediate suspension and probation.</li>
+                    <li><strong>Theft:</strong> Stealing personal or institutional properties. <em>Sanction:</em> Restitution and suspension.</li>
+                    <li><strong>Violence & Bullying:</strong> Fighting or harassment. <em>Sanction:</em> Manual work allocation and warning.</li>
+                    <li><strong>Unauthorized Electronics:</strong> Phones, smart gadgets, or radios. <em>Sanction:</em> Confiscation until returned to parents.</li>
+                </ul>
+            </section>
+
+            <section id="prefects">
+                <h2 class="section-title">CHAPTER SEVEN: PREFECTORIAL CODE OF CONDUCT</h2>
+                <p>This Leadership Charter defines the rules governing student leaders (prefects), religious leaders, dormitory leaders, and form captains appointed to assist the staff in ensuring efficient administration of the school.</p>
+                <ul>
+                    <li><strong>The Head Prefect:</strong> Overall student leader and chief representative of the student body.</li>
+                    <li><strong>Deputy Head Prefect:</strong> Assists the Head Prefect directly and assumes authority in their absence.</li>
+                    <li><strong>Discipline Prefect & Deputy:</strong> Assists the staff directly in enforcing school rules across the campus.</li>
+                </ul>
+            </section>
+
+            <section id="unsa">
+                <h2 class="section-title">CHAPTER EIGHT: UGANDA NATIONAL STUDENTS ASSOCIATION (UNSA)</h2>
+                <p>Namungoona High School maintains full compliance with national student leadership frameworks. The UNSA branch represents national student integration interests inside our boundary walls.</p>
+            </section>
+
+            <section id="chapter7">
+                <h2 class="section-title">CHAPTER NINE: JUDICIAL PROCESSES & TRIAL MECHANICS</h2>
+                <p>Cases require clear factual verification by the Intelligence Desk and Prosecutor before trials can proceed. Accused students have the right to full defense parameters, cross-examination loops, and appeals through the office of the Headmaster.</p>
+            </section>
+
+            <section id="chapter8">
+                <h2 class="section-title">CHAPTER TEN: COMMUNICATION RULES</h2>
+                <p>All official notifications or briefings concerning the judicial court updates must pass explicitly through the authorized Court Spokesperson to avoid misinformation or campus rumors.</p>
+            </section>
+
+            <section id="chapter9">
+                <h2 class="section-title">CHAPTER ELEVEN: AMENDMENTS & ENFORCEMENT</h2>
+                <p>Structural alterations to this constitution require mutual approval from both the school administration board and the student council body to guarantee legitimacy.</p>
+                
+                <div class="quote-box">
+                    <strong>Strong Discipline Quote:</strong> 
+                    “Discipline is choosing between what you want now and what you want most in the future.”
+                </div>
+                
+                <p style="text-align: center; font-size: 0.85em; color: #718096; margin-top: 25px;">
+                    Edited and presented by the First School Court of Namungoona High School in 2026.<br>
+                    Headed by <strong>Chief Judge Ssenyonjo Ian Richard</strong> and the Intelligence Desk headed by <strong>Ssemuwemba Henry James</strong>.
+                </p>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Premium School Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>NAMUNGOONA HIGH SCHOOL</h3>
+                <p>Nurturing young minds through holistic modern education frameworks, leading technology innovation labs, and unparalleled athletic tracking infrastructure.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="wa-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="#">About Academy</a></li>
+                    <li><a href="#">Admissions 2026</a></li>
+                    <li><a href="#">Academic Curriculum</a></li>
+                    <li><a href="#">Campus Safety Hub</a></li>
+                    <li><a href="#">Parent Portal Logins</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Located 5 Miles along Hoima Rd, 100 Meters off Nakibinge Stage.</p>
+                <p><i class="fa-solid fa-phone"></i> +256 700 627 96 / +256 788 772 660</p>
+                <p><i class="fa-solid fa-envelope"></i> namungoonahighschool@gmail.com</p>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Stay Updated</h4>
+                <p style="color: #a4b0be; margin-bottom: 12px; line-height: 1.6;">Subscribe to receive academic schedules, quarterly reports, and breaking campus news logs.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" placeholder="Enter parent email address..." required>
+                    <button type="submit">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 NAMUNGOONA HIGH SCHOOL. All institutional rights reserved globally.</p>
+            <p>Designed for excellence • <a href="#" style="color: #7f8c8d; text-decoration: underline;">Privacy Matrix</a></p>
+        </div>
+    </footer>
+
+    <script>
+        /* Mobile Navbar Toggle Controller */
+        function toggleMobileMenu() {
+            const headerElement = document.getElementById('header');
+            headerElement.classList.toggle('mobile-active');
+        }
+
+        /* Dynamic Typing Effect for Homepage Welcome Message */
+        const textTarget = document.getElementById('typing-text');
+        const welcomeMessage = "Welcome to the Official Student Legal Charter and Guidelines. Read carefully to uphold our institutional parameters.";
+        let charIndex = 0;
+
+        function playTypingEffect() {
+            if (charIndex < welcomeMessage.length) {
+                textTarget.textContent += welcomeMessage.charAt(charIndex);
+                charIndex++;
+                setTimeout(playTypingEffect, 35);
+            }
+        }
+        
+        window.addEventListener('DOMContentLoaded', playTypingEffect);
+
+        /* Intersection Observer for Section Reveal Effects */
+        const sections = document.querySelectorAll('section');
+        const revealOptions = {
+            threshold: 0.05,
+            rootMargin: "0px 0px -40px 0px"
+        };
+
+        const sectionObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>
+</body>
+</html>
