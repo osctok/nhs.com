@@ -6,7 +6,6 @@
     <title>Academic & Media Gallery | Institutional Showcase</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
             --primary-color: #003366; /* Classic School Blue */
@@ -40,10 +39,112 @@
         }
 
         /* ==========================================================================
+           HEADER & NAVIGATION STYLES
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .top-bar {
+            background-color: #0b1320;
+            color: #a4b0be;
+            padding: 10px 8%;
+            font-size: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .top-bar-contact span {
+            margin-right: 20px;
+        }
+
+        .top-bar-contact i {
+            color: var(--secondary-color);
+            margin-right: 6px;
+        }
+
+        .main-nav {
+            background-color: var(--surface-light);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .brand-text h1 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .brand-text span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links li a:hover, .nav-links li a.active {
+            color: var(--primary-color);
+        }
+
+        .portal-btn-nav {
+            background: var(--primary-color);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: var(--transition-smooth);
+        }
+
+        .portal-btn-nav:hover {
+            background: var(--secondary-color) !important;
+            color: var(--primary-color) !important;
+        }
+
+        /* ==========================================================================
            GALLERY COMPONENT STYLES
            ========================================================================== */
         .gallery-section {
-            padding: 100px 8%;
+            padding: 80px 8%;
             background: var(--surface-light);
         }
 
@@ -155,7 +256,7 @@
             justify-content: center;
             transition: var(--transition-smooth);
         }
-        
+                
         .video-overlay i, .magazine-overlay i {
             color: white;
             font-size: 2rem;
@@ -288,7 +389,7 @@
         }
 
         .lightbox-modal.active { display: flex; }
-
+        
         .lightbox-close {
             position: absolute;
             top: 30px; right: 30px;
@@ -297,6 +398,7 @@
             cursor: pointer;
             transition: var(--transition-smooth);
         }
+        
         .lightbox-close:hover { color: var(--secondary-color); }
 
         .lightbox-content-box {
@@ -502,6 +604,7 @@
         @media (max-width: 992px) {
             .gallery-section { padding: 80px 5%; }
             .gallery-header h2 { font-size: 2.2rem; }
+            .nav-links { display: none; } /* Can be wired with mobile drawer toggle later */
         }
 
         @media (max-width: 768px) {
@@ -511,6 +614,10 @@
             }
             .footer-bottom {
                 flex-direction: column;
+                text-align: center;
+            }
+            .top-bar {
+                justify-content: center;
                 text-align: center;
             }
         }
@@ -523,6 +630,35 @@
     </style>
 </head>
 <body>
+
+    <!-- Institutional Header & Navigation Bar -->
+    <header class="site-header">
+        <div class="top-bar">
+            <div class="top-bar-contact">
+                <span><i class="fa-solid fa-phone"></i> +256 700 627 96 / +256 788 772 660</span>
+                <span><i class="fa-solid fa-envelope"></i> namungoonahighschool@gmail.com</span>
+            </div>
+            <div class="top-bar-socials">
+                <span>Strive to Excel</span>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <a href="index.html" class="nav-brand">
+                <div class="brand-text">
+                    <h1>Namungoona High School</h1>
+                    <span>Institutional Portal</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Academics</a></li>
+                <li><a href="#" class="active">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="portal-btn-nav">Student Portal</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="gallery-section" id="mediaGallery">
         <div class="gallery-header">
@@ -538,7 +674,6 @@
         </div>
 
         <div class="gallery-grid">
-            
             <div class="gallery-card" data-type="magazine">
                 <div class="media-wrapper" onclick="window.location.href='magazine.html'">
                     <span class="media-badge magazine-badge"><i class="fas fa-book-open" style="margin-right: 5px;"></i>Magazine</span>
@@ -675,7 +810,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -686,7 +820,6 @@
 
     <footer class="main-footer">
         <div class="footer-container">
-            
             <div class="footer-brand">
                 <h3>NAMUNGOONA HIGH SCHOOL</h3>
                 <p>Nurturing young minds through holistic modern education frameworks, leading technology innovation labs, and unparalleled athletic tracking infrastructure.</p>
@@ -698,7 +831,6 @@
                     <a href="#" class="wa-btn"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
-
             <div class="footer-links">
                 <h4>Quick Navigation</h4>
                 <ul>
@@ -709,14 +841,12 @@
                     <li><a href="#">Parent Portal Logins</a></li>
                 </ul>
             </div>
-
             <div class="footer-contact">
                 <h4>Contact Us</h4>
                 <p><i class="fa-solid fa-location-dot"></i> Located 5 Miles along Hoima Rd, 100 Meters off Nakibinge Stage.</p>
                 <p><i class="fa-solid fa-phone"></i> +256 700 627 96 / +256 788 772 660</p>
                 <p><i class="fa-solid fa-envelope"></i> namungoonahighschool@gmail.com</p>
             </div>
-
             <div class="footer-newsletter">
                 <h4>Stay Updated</h4>
                 <p style="color: #a4b0be; margin-bottom: 12px; line-height: 1.6;">Subscribe to receive academic schedules, quarterly reports, and breaking campus news logs.</p>
@@ -725,9 +855,7 @@
                     <button type="submit">Join</button>
                 </form>
             </div>
-
         </div>
-
         <div class="footer-bottom">
             <p>&copy; 2026 NAMUNGOONA HIGH SCHOOL. All institutional rights reserved globally.</p>
             <p>Designed for excellence • <a href="#" style="color: #7f8c8d; text-decoration: underline;">Privacy Matrix</a></p>
@@ -801,7 +929,7 @@
             displayContainer.appendChild(caption);
 
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevents scrolling behind lightbox
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
@@ -810,14 +938,12 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close when clicking outside content bounds box area
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 closeLightbox();
             }
         });
 
-        // Close window via keyboard Escape interaction
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                 closeLightbox();
