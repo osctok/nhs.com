@@ -1,584 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE 2026 NHS BELL MAGAZINE - Premium Digital Edition</title>
-    <!-- Premium Google Fonts for Calligraphy & High-End Stationery Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Pro Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            /* Luxury Wedding Card Palette */
-            --primary: #0A2342;       /* Deep Royal Navy */
-            --accent: #D4AF37;        /* Metallic Foil Gold */
-            --accent-light: #F4E8C1;  /* Silk Champagne Gold */
-            --bg-cream: #FCFBF7;      /* Matte Ivory Paper */
-            --bg-white: #FFFFFF;      /* Pure Alabaster */
-            --text-main: #1C2530;     /* Charcoal Print Ink */
-            --text-muted: #5A6573;
-
-            /* Vibrant Academic & Lifestyle Sub-Tokens */
-            --neon-teal: #00A896;
-            --vibrant-orange: #FF6B35;
-            --royal-purple: #4A154B;
-        }
-
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>THE 2026 NHS BELL MAGAZINE - Premium Digital Edition</title>    <!-- Premium Google Fonts for Calligraphy & High-End Stationery Typography -->    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">    <!-- Font Awesome Pro Icons -->    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">        <style>        :root {            /* Luxury Wedding Card Palette */            --primary: #0A2342;       /* Deep Royal Navy */            --accent: #D4AF37;        /* Metallic Foil Gold */            --accent-light: #F4E8C1;  /* Silk Champagne Gold */            --bg-cream: #FCFBF7;      /* Matte Ivory Paper */            --bg-white: #FFFFFF;      /* Pure Alabaster */            --text-main: #1C2530;     /* Charcoal Print Ink */            --text-muted: #5A6573;
+            /* Vibrant Academic & Lifestyle Sub-Tokens */            --neon-teal: #00A896;            --vibrant-orange: #FF6B35;            --royal-purple: #4A154B;        }
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+            margin: 0;            padding: 0;            box-sizing: border-box;            scroll-behavior: smooth;        }
+        body {            background-color: var(--bg-cream);            color: var(--text-main);            font-family: 'Montserrat', sans-serif;            overflow-x: hidden;        }
+        /* --- CALLIGRAPHY UTILITY --- */        .calligraphy {            font-family: 'Pinyon Script', cursive;            font-size: 3.5rem;            color: var(--accent);            line-height: 1;            text-transform: none !important;            letter-spacing: 0 !important;        }
+        /* --- PREMIUM STATIC COVER OVERLAY --- */        .mag-cover {            background: linear-gradient(rgba(10, 35, 66, 0.95), rgba(6, 22, 41, 0.98)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;            color: white;            padding: 60px 20px;            text-align: center;            border-bottom: 5px solid var(--accent);            position: relative;        }
+        .badge-wrapper {            width: 100px;            height: 100px;            margin: 0 auto 15px;            background: var(--bg-white);            border-radius: 50%;            padding: 6px;            border: 2px solid var(--accent);            display: flex;            align-items: center;            justify-content: center;        }
+        .badge-wrapper img {            width: 100%;            height: 100%;            object-fit: contain;        }
+        .school-name {            font-family: 'Cinzel', serif;            font-size: 2.2rem;            letter-spacing: 2px;            text-transform: uppercase;        }
+        .magazine-title-banner {            font-family: 'Cinzel', serif;            font-size: 3.2rem;            font-weight: 900;            color: var(--accent);            letter-spacing: 3px;            margin: 10px 0;            text-shadow: 0px 4px 15px rgba(0,0,0,0.5);        }
 
-        body {
-            background-color: var(--bg-cream);
-            color: var(--text-main);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
+        /* --- REPEATED HEADER STYLES FOR SECTIONS --- */        .section-header-banner {            background: linear-gradient(rgba(10, 35, 66, 0.95), rgba(6, 22, 41, 0.98)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;            color: white;            padding: 40px 20px;            text-align: center;            border-top: 3px solid var(--accent);            border-bottom: 3px solid var(--accent);            margin-top: 50px;            margin-bottom: 30px;        }
+        .section-header-banner .badge-wrapper {            width: 70px;            height: 70px;            margin: 0 auto 10px;        }
+        .section-header-banner .school-name {            font-size: 1.5rem;        }
+        .section-header-banner .magazine-title-banner {            font-size: 2.2rem;            margin: 5px 0;        }
 
-        /* --- CALLIGRAPHY UTILITY --- */
-        .calligraphy {
-            font-family: 'Pinyon Script', cursive;
-            font-size: 3.5rem;
-            color: var(--accent);
-            line-height: 1;
-            text-transform: none !important;
-            letter-spacing: 0 !important;
-        }
+        /* --- HIGH-END BOOK-FLIP ROUTING INTERFACE --- */        .archive-nav {            background: var(--primary);            position: sticky;            top: 0;            z-index: 1000;            border-bottom: 3px solid var(--accent);            display: flex;            justify-content: center;            gap: 10px;            padding: 15px 10px;            overflow-x: auto;            white-space: nowrap;        }
+        .nav-tab {            color: var(--accent-light);            background: transparent;            border: 1px solid rgba(212, 175, 55, 0.3);            font-family: 'Cinzel', serif;            font-size: 0.8rem;            font-weight: 700;            text-transform: uppercase;            letter-spacing: 1px;            padding: 8px 18px;            cursor: pointer;            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);        }
+        .nav-tab:hover, .nav-tab.active-tab {            color: var(--primary);            background: var(--accent);            border-color: var(--accent);            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);        }
+        /* --- MULTI-PAGE VIEWPORT ENGINE --- */        .magazine-viewport {            max-width: 1400px;            margin: 40px auto 80px;            padding: 0 25px;            min-height: 600px;            position: relative;        }
+        /* Page Shells: Hidden by Default, Animated via JS Switching */        .magazine-page {            display: none;            opacity: 0;            transform: translateY(20px);            transition: opacity 0.5s ease, transform 0.5s ease;        }
+        .magazine-page.active-page {            display: block;            opacity: 1;            transform: translateY(0);        }
+        /* --- SECTION DESIGN ELEMENTS (WEDDING SUITE INSET EFFECT) --- */        .editorial-frame {            background: var(--bg-white);            border: 1px solid var(--accent);            padding: 50px;            position: relative;            box-shadow: 0 30px 70px rgba(10,35,66,0.03);            display: grid;            grid-template-columns: 1fr 2fr;            gap: 50px;        }
+        .editorial-frame::after {            content: '';            position: absolute;            top: 12px; left: 12px; right: 12px; bottom: 12px;            border: 1px solid rgba(214, 175, 55, 0.3);            pointer-events: none;        }
+        @media (max-width: 992px) {            .editorial-frame { grid-template-columns: 1fr; padding: 25px; }        }
+        .profile-box {            border: 1px solid var(--accent);            padding: 12px;            background: var(--bg-cream);            text-align: center;        }
+        .profile-box img {            width: 100%;            height: 350px;            object-fit: cover;            border: 1px solid rgba(214, 175, 55, 0.2);        }
+        /* Page Layout Architecture Dividers */        .page-header-divider {            text-align: center;            margin-bottom: 30px;            position: relative;        }
+        .page-header-divider h2 {            font-family: 'Cinzel', serif;            font-size: 2.5rem;            color: var(--primary);            background: var(--bg-cream);            display: inline-block;            padding: 0 35px;            position: relative;            z-index: 5;            letter-spacing: 2px;        }
+        .page-header-divider::before {            content: '';            position: absolute;            top: 50%; left: 0; width: 100%; height: 1px;            background: linear-gradient(to right, transparent, var(--accent), transparent);            z-index: 1;        }
+        /* --- CARD GRID MASTER SCHEMES --- */        .grid-layout-3 {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));            gap: 40px;        }
+        .luxury-card-inset {            background: var(--bg-white);            border: 1px solid rgba(214, 175, 55, 0.25);            padding: 35px;            position: relative;            box-shadow: 0 10px 30px rgba(0,0,0,0.01);        }
+        .luxury-card-inset h3 {            font-family: 'Cinzel', serif;            color: var(--primary);            font-size: 1.4rem;            margin: 15px 0;            border-bottom: 1px solid rgba(214,175,55,0.15);            padding-bottom: 10px;        }
+        /* --- VIBRANT SPREADS (EDUTAINMENT / LIFESTYLE / CREATIVE) --- */        .bright-magazine-grid {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));            gap: 35px;        }
+        .color-pop-card {            color: white;            padding: 40px;            box-shadow: 0 20px 40px rgba(0,0,0,0.05);            position: relative;        }
+        .color-pop-card.teal { background: linear-gradient(135deg, #00A896, #028090); }        .color-pop-card.orange { background: linear-gradient(135deg, #FF6B35, #E84855); }        .color-pop-card.purple { background: linear-gradient(135deg, #4A154B, #6B2D5C); }
+        .color-pop-card h3 {            font-family: 'Cinzel', serif;            font-size: 1.5rem;            margin-bottom: 15px;        }
+        .premium-list {            list-style: none;        }
+        .premium-list li {            padding: 12px 0;            border-bottom: 1px solid rgba(255,255,255,0.15);            display: flex;            justify-content: space-between;            font-size: 0.95rem;        }
+        .luxury-card-inset .premium-list li {            border-bottom: 1px solid rgba(10,35,66,0.06);        }
+        /* --- PREFECTS & STUDENT TESTIMONIAL SUITE --- */        .student-showcase-matrix {            display: grid;            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));            gap: 30px;        }
+        .student-profile-node {            background: white;            border: 1px solid var(--accent);            padding: 20px;            text-align: center;            box-shadow: 0 15px 35px rgba(0,0,0,0.02);        }
+        .student-profile-node img {            width: 100%;            height: 280px;            object-fit: cover;            border-bottom: 4px solid var(--accent);        }
+        .quote-block {            font-family: 'Playfair Display', serif;            font-style: italic;            font-size: 0.95rem;            color: var(--text-main);            margin-top: 15px;            line-height: 1.6;        }
+        /* --- DIGITAL PHOTO ALBUM LAYER --- */        .gallery-masonry {            display: grid;            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));            gap: 20px;        }
+        .gallery-node {            position: relative;            height: 220px;            overflow: hidden;            border: 1px solid var(--accent);        }
+        .gallery-node img {            width: 100%;            height: 100%;            object-fit: cover;            transition: transform 0.5s ease;        }
+        .gallery-node:hover img {            transform: scale(1.08);        }
+        .gallery-tag-banner {            position: absolute;            bottom: 0; left: 0; right: 0;            background: rgba(10, 35, 66, 0.95);            color: white;            padding: 12px;            font-size: 0.75rem;            text-transform: uppercase;            letter-spacing: 1px;            text-align: center;        }
+        /* --- ACTION ROUTING NAVIGATION BUTTON --- */        .page-turner-action {            display: flex;            justify-content: flex-end;            margin-top: 40px;        }
+        .turn-page-btn {            background: var(--primary);            color: var(--accent);            border: 1px solid var(--accent);            padding: 12px 30px;            font-family: 'Cinzel', serif;            font-size: 0.85rem;            font-weight: bold;            cursor: pointer;            letter-spacing: 2px;            text-transform: uppercase;            transition: all 0.3s ease;            display: flex;            align-items: center;            gap: 10px;        }
+        .turn-page-btn:hover {            background: var(--accent);            color: var(--primary);        }
+        /* --- METROPOLITAN FOIL FOOTER --- */        .premium-footer {            background: #061629;            color: #E2E8F0;            padding: 80px 20px 40px;            border-top: 5px solid var(--accent);        }
+        .footer-grid {            max-width: 1400px;            margin: 0 auto;            display: grid;            grid-template-columns: 1.5fr 1fr 1fr;            gap: 40px;            border-bottom: 1px solid rgba(255,255,255,0.08);            padding-bottom: 40px;        }
+        @media (max-width: 768px) {            .footer-grid { grid-template-columns: 1fr; }        }
+        .footer-col h4 {            font-family: 'Cinzel', serif;            color: var(--accent);            margin-bottom: 20px;            text-transform: uppercase;            letter-spacing: 1px;        }    </style></head><body>
+    <!-- CORE MAGAZINE HUB BANNER -->    <header class="mag-cover">        <div class="badge-wrapper">            <img src="SCHOOL BADGE.png" alt="NHS Shield">        </div>        <div class="calligraphy" style="color: var(--accent-light); font-size: 2.8rem; margin-bottom: -10px;">The Premium Portfolio Version of</div>        <h1 class="school-name">Namungoona High School</h1>        <h2 class="magazine-title-banner"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>        <div class="calligraphy" style="font-size:2.2rem; color:var(--accent);">Volume XII • Multi-Page Web Suite</div>    </header>
+    <!-- INTERACTIVE BOOK-FLIP TABS (ACT LIKE UNIQUE PAGES) -->    <nav class="archive-nav">        <button class="nav-tab active-tab" onclick="switchPage('page-editorial', this)">Page 1: Editorial Suite</button>        <button class="nav-tab" onclick="switchPage('page-admin', this)">Page 2: Executive Desk</button>        <button class="nav-tab" onclick="switchPage('page-academics', this)">Page 3: Academic Registry</button>        <button class="nav-tab" onclick="switchPage('page-lifestyle', this)">Page 4: Student Hub</button>        <button class="nav-tab" onclick="switchPage('page-sports', this)">Page 5: Sports Arena</button>        <button class="nav-tab" onclick="switchPage('page-gallery', this)">Page 6: Visual Archives</button>    </nav>
+    <!-- CORE VIEWPORT CONTAINING ALL HIDDEN/DYNAMIC PAGES -->    <main class="magazine-viewport">                <!-- ==================== DIGITAL PAGE 1: EDITORIAL SECTOR ==================== -->        <div id="page-editorial" class="magazine-page active-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Editorial Suite</div>            </div>
 
-        /* --- PREMIUM STATIC COVER OVERLAY --- */
-        .mag-cover {
-            background: linear-gradient(rgba(10, 35, 66, 0.95), rgba(6, 22, 41, 0.98)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 5px solid var(--accent);
-            position: relative;
-        }
+            <div class="page-header-divider"><h2>The Editorial Spread</h2></div>            <div class="editorial-frame">                <div class="profile-column">                    <div class="profile-box">                        <img src="1775475982518.png" alt="Kamya Oscar Chief Editor" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80';">                        <div class="calligraphy" style="font-size: 2rem; margin-top:12px;">Chief Editor Note</div>                        <h4 style="font-family:'Cinzel',serif; color:var(--primary); font-size: 1.2rem;">Kamya Oscar</h4>                        <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1px;">Senior Four K (S.4K)</p>                    </div>                </div>                <div class="text-column" style="display:flex; flex-direction:column; justify-content:center;">                    <div class="calligraphy" style="font-size: 2.5rem; text-align:left; margin-bottom:5px;">Welcome Remarks</div>                    <h3 style="font-family:'Cinzel',serif; color:var(--primary); margin-bottom:20px;">Purpose of the 2026 Compilation</h3>                    <p style="text-align:justify; margin-bottom:15px; font-size:0.95rem;">Welcome to the grand literary showcase of 2026. As the chief driver of the editorial assembly, my vision was to layout a highly structural, premium registry that maps out all 28 branches of progress defining Namungoona High School this year.</p>                    <p style="font-style:italic; border-left:3px solid var(--accent); padding-left:15px; color:var(--text-muted); margin-bottom:25px;">"This digital issue operates as a testament to our ongoing scientific expansion along Hoima Road, our record-setting achievements, and the modern legacy built by our active student leadership structures."</p>                                                            <div class="page-turner-action">                        <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[1].click();">Flip to Next Page <i class="fa-solid fa-arrow-right"></i></button>                    </div>                </div>            </div>        </div>
+        <!-- ==================== DIGITAL PAGE 2: ADMINISTRATION ==================== -->        <div id="page-admin" class="magazine-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Executive Desk</div>            </div>
 
-        .badge-wrapper {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 15px;
-            background: var(--bg-white);
-            border-radius: 50%;
-            padding: 6px;
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+            <div class="page-header-divider"><h2>School Administration</h2></div>            <div class="grid-layout-3">                <div class="luxury-card-inset">                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-user-gear"></i></div>                    <h3>Principal's Executive Message</h3>                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Our primary operational blueprint focuses on high-end resource deployment, ensuring that standard guidelines evolve directly into functional achievements.</p>                </div>                <div class="luxury-card-inset">                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-id-card-clip"></i></div>                    <h3>Deputy Headteacher's Brief</h3>                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Discipline remains our driving framework. By reinforcing strong character development metrics, our students perform exceptionally under pressure.</p>                </div>                <div class="luxury-card-inset">                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-gem"></i></div>                    <h3>Directors' Strategic Remarks</h3>                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Continuing to finance state-of-the-art computer labs, agricultural installations, and extensive safety configurations across the campus network.</p>                </div>            </div>            <div class="page-turner-action">                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[2].click();">Go to Academics <i class="fa-solid fa-arrow-right"></i></button>            </div>        </div>
+        <!-- ==================== DIGITAL PAGE 3: ACADEMICS sector ==================== -->        <div id="page-academics" class="magazine-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Academic Registry</div>            </div>
 
-        .badge-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+            <div class="page-header-divider"><h2>Academic &amp; Research Division</h2></div>            <div class="grid-layout-3">                <div class="luxury-card-inset" style="border-top:4px solid var(--accent);">                    <h3><i class="fa-solid fa-graduation-cap"></i> Best-Performing Students</h3>                    <ul class="premium-list">                        <li><span>Senior 4 Board: 8 Aggregates</span> <strong style="color:var(--accent);">Div 1 Gold</strong></li>                        <li><span>Senior 6 Board: 20 Points (BCM/Sub)</span> <strong style="color:var(--accent);">National Top</strong></li>                        <li><span>Senior 6 Board: 19 Points (PCM/Sub)</span> <strong style="color:var(--accent);">Elite Level</strong></li>                    </ul>                </div>                <div class="luxury-card-inset">                    <h3><i class="fa-solid fa-star-and-crecent"></i> National Examination Guidance</h3>                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">Deploy precise active-recall testing systems during evening prep blocks. Pay strict attention to specialized layout guidelines from the UNEB assessment board.</p>                </div>                <div class="luxury-card-inset">                    <h3><i class="fa-solid fa-atom"></i> Research &amp; AI Coding Labs</h3>                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">The 2026 ICT and Science Club innovators successfully rolled out customized micro-utility programs, introducing algorithms to the intermediate class blocks.</p>                </div>            </div>            <div class="page-turner-action">                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[3].click();">Open Student Hub <i class="fa-solid fa-arrow-right"></i></button>            </div>        </div>
+        <!-- ==================== DIGITAL PAGE 4: LIFESTYLE & EDUTAINMENT ==================== -->        <div id="page-lifestyle" class="magazine-page">            <!-- Section Header Banner Added -->            <div class="section-header-banner">                <div class="badge-wrapper">                    <img src="SCHOOL BADGE.png" alt="NHS Shield">                </div>                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>                <h1 class="school-name">Namungoona High School</h1>                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Student Hub</div>            </div>
 
-        .school-name {
-            font-family: 'Cinzel', serif;
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .magazine-title-banner {
-            font-family: 'Cinzel', serif;
-            font-size: 3.2rem;
-            font-weight: 900;
-            color: var(--accent);
-            letter-spacing: 3px;
-            margin: 10px 0;
-            text-shadow: 0px 4px 15px rgba(0,0,0,0.5);
-        }
-
-        /* --- HIGH-END BOOK-FLIP ROUTING INTERFACE --- */
-        .archive-nav {
-            background: var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 3px solid var(--accent);
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            padding: 15px 10px;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-
-        .nav-tab {
-            color: var(--accent-light);
-            background: transparent;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            font-family: 'Cinzel', serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 8px 18px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .nav-tab:hover, .nav-tab.active-tab {
-            color: var(--primary);
-            background: var(--accent);
-            border-color: var(--accent);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        /* --- MULTI-PAGE VIEWPORT ENGINE --- */
-        .magazine-viewport {
-            max-width: 1400px;
-            margin: 40px auto 80px;
-            padding: 0 25px;
-            min-height: 600px;
-            position: relative;
-        }
-
-        /* Page Shells: Hidden by Default, Animated via JS Switching */
-        .magazine-page {
-            display: none;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .magazine-page.active-page {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- SECTION DESIGN ELEMENTS (WEDDING SUITE INSET EFFECT) --- */
-        .editorial-frame {
-            background: var(--bg-white);
-            border: 1px solid var(--accent);
-            padding: 50px;
-            position: relative;
-            box-shadow: 0 30px 70px rgba(10,35,66,0.03);
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 50px;
-        }
-
-        .editorial-frame::after {
-            content: '';
-            position: absolute;
-            top: 12px; left: 12px; right: 12px; bottom: 12px;
-            border: 1px solid rgba(214, 175, 55, 0.3);
-            pointer-events: none;
-        }
-
-        @media (max-width: 992px) {
-            .editorial-frame { grid-template-columns: 1fr; padding: 25px; }
-        }
-
-        .profile-box {
-            border: 1px solid var(--accent);
-            padding: 12px;
-            background: var(--bg-cream);
-            text-align: center;
-        }
-
-        .profile-box img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            border: 1px solid rgba(214, 175, 55, 0.2);
-        }
-
-        /* Page Layout Architecture Dividers */
-        .page-header-divider {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-
-        .page-header-divider h2 {
-            font-family: 'Cinzel', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            background: var(--bg-cream);
-            display: inline-block;
-            padding: 0 35px;
-            position: relative;
-            z-index: 5;
-            letter-spacing: 2px;
-        }
-
-        .page-header-divider::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 0; width: 100%; height: 1px;
-            background: linear-gradient(to right, transparent, var(--accent), transparent);
-            z-index: 1;
-        }
-
-        /* --- CARD GRID MASTER SCHEMES --- */
-        .grid-layout-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 40px;
-        }
-
-        .luxury-card-inset {
-            background: var(--bg-white);
-            border: 1px solid rgba(214, 175, 55, 0.25);
-            padding: 35px;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-        }
-
-        .luxury-card-inset h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--primary);
-            font-size: 1.4rem;
-            margin: 15px 0;
-            border-bottom: 1px solid rgba(214,175,55,0.15);
-            padding-bottom: 10px;
-        }
-
-        /* --- VIBRANT SPREADS (EDUTAINMENT / LIFESTYLE / CREATIVE) --- */
-        .bright-magazine-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-        }
-
-        .color-pop-card {
-            color: white;
-            padding: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-            position: relative;
-        }
-
-        .color-pop-card.teal { background: linear-gradient(135deg, #00A896, #028090); }
-        .color-pop-card.orange { background: linear-gradient(135deg, #FF6B35, #E84855); }
-        .color-pop-card.purple { background: linear-gradient(135deg, #4A154B, #6B2D5C); }
-
-        .color-pop-card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-
-        .premium-list {
-            list-style: none;
-        }
-
-        .premium-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.15);
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.95rem;
-        }
-
-        .luxury-card-inset .premium-list li {
-            border-bottom: 1px solid rgba(10,35,66,0.06);
-        }
-
-        /* --- PREFECTS & STUDENT TESTIMONIAL SUITE --- */
-        .student-showcase-matrix {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .student-profile-node {
-            background: white;
-            border: 1px solid var(--accent);
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.02);
-        }
-
-        .student-profile-node img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-bottom: 4px solid var(--accent);
-        }
-
-        .quote-block {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            margin-top: 15px;
-            line-height: 1.6;
-        }
-
-        /* --- DIGITAL PHOTO ALBUM LAYER --- */
-        .gallery-masonry {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-node {
-            position: relative;
-            height: 220px;
-            overflow: hidden;
-            border: 1px solid var(--accent);
-        }
-
-        .gallery-node img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-node:hover img {
-            transform: scale(1.08);
-        }
-
-        .gallery-tag-banner {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(10, 35, 66, 0.95);
-            color: white;
-            padding: 12px;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        /* --- ACTION ROUTING NAVIGATION BUTTON --- */
-        .page-turner-action {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 40px;
-        }
-
-        .turn-page-btn {
-            background: var(--primary);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            padding: 12px 30px;
-            font-family: 'Cinzel', serif;
-            font-size: 0.85rem;
-            font-weight: bold;
-            cursor: pointer;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .turn-page-btn:hover {
-            background: var(--accent);
-            color: var(--primary);
-        }
-
-        /* --- METROPOLITAN FOIL FOOTER --- */
-        .premium-footer {
-            background: #061629;
-            color: #E2E8F0;
-            padding: 80px 20px 40px;
-            border-top: 5px solid var(--accent);
-        }
-
-        .footer-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .footer-grid { grid-template-columns: 1fr; }
-        }
-
-        .footer-col h4 {
-            font-family: 'Cinzel', serif;
-            color: var(--accent);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- CORE MAGAZINE HUB BANNER -->
-    <header class="mag-cover">
-        <div class="badge-wrapper">
-            <img src="SCHOOL BADGE.png" alt="NHS Shield">
-        </div>
-        <div class="calligraphy" style="color: var(--accent-light); font-size: 2.8rem; margin-bottom: -10px;">The Premium Portfolio Version of</div>
-        <h1 class="school-name">Namungoona High School</h1>
-        <h2 class="magazine-title-banner"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>
-        <div class="calligraphy" style="font-size:2.2rem; color:var(--accent);">Volume XII • Multi-Page Web Suite</div>
-    </header>
-
-    <!-- INTERACTIVE BOOK-FLIP TABS (ACT LIKE UNIQUE PAGES) -->
-    <nav class="archive-nav">
-        <button class="nav-tab active-tab" onclick="switchPage('page-editorial', this)">Page 1: Editorial Suite</button>
-        <button class="nav-tab" onclick="switchPage('page-admin', this)">Page 2: Executive Desk</button>
-        <button class="nav-tab" onclick="switchPage('page-academics', this)">Page 3: Academic Registry</button>
-        <button class="nav-tab" onclick="switchPage('page-lifestyle', this)">Page 4: Student Hub</button>
-        <button class="nav-tab" onclick="switchPage('page-sports', this)">Page 5: Sports Arena</button>
-        <button class="nav-tab" onclick="switchPage('page-gallery', this)">Page 6: Visual Archives</button>
-    </nav>
-
-    <!-- CORE VIEWPORT CONTAINING ALL HIDDEN/DYNAMIC PAGES -->
-    <main class="magazine-viewport">
-        
-        <!-- ==================== DIGITAL PAGE 1: EDITORIAL SECTOR ==================== -->
-        <div id="page-editorial" class="magazine-page active-page">
-            <div class="page-header-divider"><h2>The Editorial Spread</h2></div>
-            <div class="editorial-frame">
-                <div class="profile-column">
-                    <div class="profile-box">
-                        <img src="1775475982518.png" alt="Kamya Oscar Chief Editor" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80';">
-                        <div class="calligraphy" style="font-size: 2rem; margin-top:12px;">Chief Editor Note</div>
-                        <h4 style="font-family:'Cinzel',serif; color:var(--primary); font-size: 1.2rem;">Kamya Oscar</h4>
-                        <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase; letter-spacing:1px;">Senior Four K (S.4K)</p>
-                    </div>
+            <div class="page-header-divider"><h2>The 2026 NHS Bell Hub</h2></div>                        <!-- Vibrant Bright Cluster Layout -->            <div class="bright-magazine-grid" style="margin-bottom: 50px;">                <div class="color-pop-card teal">                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-puzzle-piece"></i></div>                    <h3>4. Edutainment Box</h3>                    <p>Combining challenging brain teasers, educational comics, and riddles aimed at expanding mental processing capabilities.</p>                    <ul class="premium-list">                        <li><span>Logic Word Searches</span> <span>Log 084</span></li>                        <li><span>Weekly Quiz Competitions</span> <span>Rank 01</span></li>                    </ul>                </div>                <div class="color-pop-card orange">                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-clapperboard"></i></div>                    <h3>5. Entertainment &amp; Trends</h3>                    <p>Highlighting favorite campus tracks, viral weekend media review trends, and cultural music festival moments.</p>                    <ul class="premium-list">                        <li><span>Song of Year: Choir Remix</span> <span>Trending</span></li>                        <li><span>Fashion &amp; Grooming Guides</span> <span>Page 112</span></li>                    </ul>                </div>                <div class="color-pop-card purple">                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-pen-nib"></i></div>                    <h3>11. Creative Writing</h3>                    <p>The sanctuary for custom student poetry collections, short stories, inspirational scripts, and composition blocks.</p>                    <ul class="premium-list">                        <li><span>"The Hoima Road Bell" Poem</span> <span>S.4 Writers</span></li>                        <li><span>Alumni Mentorship Essays</span> <span>Archived</span></li>                    </ul>                </div>            </div>
+            <!-- What Students Say with Profile Pictures -->            <div class="calligraphy" style="text-align:center; font-size:2.8rem; margin-bottom:10px;">The Student Voice Box</div>            <div class="student-showcase-matrix">                <div class="student-profile-node">                    <img src="STUDENT1.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80';">                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Natooro Precious</h4>                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Prefect Council Lead</p>                    <p class="quote-block">"Serving in the 2026 school parliament taught me how to lead with absolute integrity. We are standard-bearers."</p>                </div>                <div class="student-profile-node">                    <img src="STUDENT2.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';">                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Kimbugwe Derrick</h4>                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">S.4 Tech Committee</p>                    <p class="quote-block">"The modern computer networks on campus allowed us to design code layouts right inside our daily workshops."</p>                </div>                <div class="student-profile-node">                    <img src="STUDENT3.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80';">                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Aisha Zalwango</h4>                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Senior Five Science</p>                    <p class="quote-block">"The balanced energy between challenging lab reports and weekend musical drama festivals is what makes NHS special."</p>                </div>            </div>                                    <div class="page-turner-action">                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[4].click();">Flip to Sports <i class="fa-solid fa-arrow-right"></i></button>            </div>        </div>
+        <!-- ==================== DIGITAL PAGE 5: SPORTS SECTOR ==================== -->        <div id="page-sports" class="magazine-page">
+            <!-- Section Header Banner Added -->
+            <div class="section-header-banner">
+                <div class="badge-wrapper">
+                    <img src="SCHOOL BADGE.png" alt="NHS Shield">
                 </div>
-                <div class="text-column" style="display:flex; flex-direction:column; justify-content:center;">
-                    <div class="calligraphy" style="font-size: 2.5rem; text-align:left; margin-bottom:5px;">Welcome Remarks</div>
-                    <h3 style="font-family:'Cinzel',serif; color:var(--primary); margin-bottom:20px;">Purpose of the 2026 Compilation</h3>
-                    <p style="text-align:justify; margin-bottom:15px; font-size:0.95rem;">Welcome to the grand literary showcase of 2026. As the chief driver of the editorial assembly, my vision was to layout a highly structural, premium registry that maps out all 28 branches of progress defining Namungoona High School this year.</p>
-                    <p style="font-style:italic; border-left:3px solid var(--accent); padding-left:15px; color:var(--text-muted); margin-bottom:25px;">"This digital issue operates as a testament to our ongoing scientific expansion along Hoima Road, our record-setting achievements, and the modern legacy built by our active student leadership structures."</p>
-                                        
-                    <div class="page-turner-action">
-                        <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[1].click();">Flip to Next Page <i class="fa-solid fa-arrow-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ==================== DIGITAL PAGE 2: ADMINISTRATION ==================== -->
-        <div id="page-admin" class="magazine-page">
-            <div class="page-header-divider"><h2>School Administration</h2></div>
-            <div class="grid-layout-3">
-                <div class="luxury-card-inset">
-                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-user-gear"></i></div>
-                    <h3>Principal's Executive Message</h3>
-                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Our primary operational blueprint focuses on high-end resource deployment, ensuring that standard guidelines evolve directly into functional achievements.</p>
-                </div>
-                <div class="luxury-card-inset">
-                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-id-card-clip"></i></div>
-                    <h3>Deputy Headteacher's Brief</h3>
-                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Discipline remains our driving framework. By reinforcing strong character development metrics, our students perform exceptionally under pressure.</p>
-                </div>
-                <div class="luxury-card-inset">
-                    <div style="font-size:2rem; color:var(--accent);"><i class="fa-solid fa-gem"></i></div>
-                    <h3>Directors' Strategic Remarks</h3>
-                    <p style="font-size:0.9rem; text-align:justify; color:var(--text-muted); line-height:1.6;">Continuing to finance state-of-the-art computer labs, agricultural installations, and extensive safety configurations across the campus network.</p>
-                </div>
-            </div>
-            <div class="page-turner-action">
-                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[2].click();">Go to Academics <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <!-- ==================== DIGITAL PAGE 3: ACADEMICS sector ==================== -->
-        <div id="page-academics" class="magazine-page">
-            <div class="page-header-divider"><h2>Academic &amp; Research Division</h2></div>
-            <div class="grid-layout-3">
-                <div class="luxury-card-inset" style="border-top:4px solid var(--accent);">
-                    <h3><i class="fa-solid fa-graduation-cap"></i> Best-Performing Students</h3>
-                    <ul class="premium-list">
-                        <li><span>Senior 4 Board: 8 Aggregates</span> <strong style="color:var(--accent);">Div 1 Gold</strong></li>
-                        <li><span>Senior 6 Board: 20 Points (BCM/Sub)</span> <strong style="color:var(--accent);">National Top</strong></li>
-                        <li><span>Senior 6 Board: 19 Points (PCM/Sub)</span> <strong style="color:var(--accent);">Elite Level</strong></li>
-                    </ul>
-                </div>
-                <div class="luxury-card-inset">
-                    <h3><i class="fa-solid fa-star-and-crecent"></i> National Examination Guidance</h3>
-                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">Deploy precise active-recall testing systems during evening prep blocks. Pay strict attention to specialized layout guidelines from the UNEB assessment board.</p>
-                </div>
-                <div class="luxury-card-inset">
-                    <h3><i class="fa-solid fa-atom"></i> Research &amp; AI Coding Labs</h3>
-                    <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">The 2026 ICT and Science Club innovators successfully rolled out customized micro-utility programs, introducing algorithms to the intermediate class blocks.</p>
-                </div>
-            </div>
-            <div class="page-turner-action">
-                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[3].click();">Open Student Hub <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <!-- ==================== DIGITAL PAGE 4: LIFESTYLE & EDUTAINMENT ==================== -->
-        <div id="page-lifestyle" class="magazine-page">
-            <div class="page-header-divider"><h2>The 2026 NHS Bell Hub</h2></div>
-            
-            <!-- Vibrant Bright Cluster Layout -->
-            <div class="bright-magazine-grid" style="margin-bottom: 50px;">
-                <div class="color-pop-card teal">
-                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-puzzle-piece"></i></div>
-                    <h3>4. Edutainment Box</h3>
-                    <p>Combining challenging brain teasers, educational comics, and riddles aimed at expanding mental processing capabilities.</p>
-                    <ul class="premium-list">
-                        <li><span>Logic Word Searches</span> <span>Log 084</span></li>
-                        <li><span>Weekly Quiz Competitions</span> <span>Rank 01</span></li>
-                    </ul>
-                </div>
-                <div class="color-pop-card orange">
-                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-clapperboard"></i></div>
-                    <h3>5. Entertainment &amp; Trends</h3>
-                    <p>Highlighting favorite campus tracks, viral weekend media review trends, and cultural music festival moments.</p>
-                    <ul class="premium-list">
-                        <li><span>Song of Year: Choir Remix</span> <span>Trending</span></li>
-                        <li><span>Fashion &amp; Grooming Guides</span> <span>Page 112</span></li>
-                    </ul>
-                </div>
-                <div class="color-pop-card purple">
-                    <div style="font-size:2rem; margin-bottom:10px;"><i class="fa-solid fa-pen-nib"></i></div>
-                    <h3>11. Creative Writing</h3>
-                    <p>The sanctuary for custom student poetry collections, short stories, inspirational scripts, and composition blocks.</p>
-                    <ul class="premium-list">
-                        <li><span>"The Hoima Road Bell" Poem</span> <span>S.4 Writers</span></li>
-                        <li><span>Alumni Mentorship Essays</span> <span>Archived</span></li>
-                    </ul>
-                </div>
+                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>
+                <h1 class="school-name">Namungoona High School</h1>
+                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>
+                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Sports Arena</div>
             </div>
 
-            <!-- What Students Say with Profile Pictures -->
-            <div class="calligraphy" style="text-align:center; font-size:2.8rem; margin-bottom:10px;">The Student Voice Box</div>
-            <div class="student-showcase-matrix">
-                <div class="student-profile-node">
-                    <img src="STUDENT1.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80';">
-                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Natooro Precious</h4>
-                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Prefect Council Lead</p>
-                    <p class="quote-block">"Serving in the 2026 school parliament taught me how to lead with absolute integrity. We are standard-bearers."</p>
-                </div>
-                <div class="student-profile-node">
-                    <img src="STUDENT2.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80';">
-                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Kimbugwe Derrick</h4>
-                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">S.4 Tech Committee</p>
-                    <p class="quote-block">"The modern computer networks on campus allowed us to design code layouts right inside our daily workshops."</p>
-                </div>
-                <div class="student-profile-node">
-                    <img src="STUDENT3.PNG" alt="Student Profile" onerror="this.src='https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80';">
-                    <h4 style="font-family:'Cinzel',serif; margin-top:12px; color:var(--primary);">Aisha Zalwango</h4>
-                    <p style="font-size:0.75rem; font-weight:700; color:var(--accent); text-transform:uppercase;">Senior Five Science</p>
-                    <p class="quote-block">"The balanced energy between challenging lab reports and weekend musical drama festivals is what makes NHS special."</p>
-                </div>
-            </div>
-                        
-            <div class="page-turner-action">
-                <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[4].click();">Flip to Sports <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <!-- ==================== DIGITAL PAGE 5: SPORTS SECTOR ==================== -->
-        <div id="page-sports" class="magazine-page">
             <div class="page-header-divider"><h2>6. Sports Division Reports</h2></div>
             <div class="grid-layout-3">
                 <div class="luxury-card-inset">
@@ -598,9 +101,18 @@
                 <button class="turn-page-btn" onclick="document.querySelectorAll('.nav-tab')[5].click();">View Gallery Archives <i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
+        <!-- ==================== DIGITAL PAGE 6: PHOTOGRAPHY GALLERY ==================== -->        <div id="page-gallery" class="magazine-page">
+            <!-- Section Header Banner Added -->
+            <div class="section-header-banner">
+                <div class="badge-wrapper">
+                    <img src="SCHOOL BADGE.png" alt="NHS Shield">
+                </div>
+                <div class="calligraphy" style="color: var(--accent-light); font-size: 2rem; margin-bottom: -5px;">The Premium Portfolio Version of</div>
+                <h1 class="school-name">Namungoona High School</h1>
+                <h2 class="magazine-title-banner" style="font-size: 2.2rem;"><i class="fa-solid fa-bell"></i> THE 2026 NHS BELL MAGAZINE</h2>
+                <div class="calligraphy" style="font-size:1.6rem; color:var(--accent);">Volume XII • Visual Archives</div>
+            </div>
 
-        <!-- ==================== DIGITAL PAGE 6: PHOTOGRAPHY GALLERY ==================== -->
-        <div id="page-gallery" class="magazine-page">
             <div class="page-header-divider"><h2>18. Visual Gallery Archives</h2></div>
             <div class="gallery-masonry">
                 <div class="gallery-node">
@@ -620,17 +132,13 @@
                     <div class="gallery-tag-banner">S.4K Tech Innovation Lab</div>
                 </div>
             </div>
-
             <!-- Historical Footer Box Inside Page -->
             <div class="luxury-card-inset" style="margin-top:50px; background:var(--accent-light); text-align:center;">
                 <h3 style="color:var(--primary);">28. Appreciation &amp; Archive Handover</h3>
                 <p style="font-size:0.95rem; font-weight:500; color:var(--primary); max-width:800px; margin: 0 auto;">Our sincere appreciation goes to the layout developers, academic boards, corporate sponsors, and alumni networks who funded this beautiful 140-page publication system.</p>
             </div>
-        </div>
-    </main>
-
-    <!-- REFINED FOIL FOOTER COMPONENT -->
-    <footer class="premium-footer">
+        </div>    </main>
+    <!-- REFINED FOIL FOOTER COMPONENT -->    <footer class="premium-footer">
         <div class="footer-grid">
             <div>
                 <h3 style="font-family:'Cinzel',serif; color:var(--accent); margin-bottom:15px; font-size:1.4rem;">Namungoona High School</h3>
@@ -652,16 +160,13 @@
             &copy; 2026 Namungoona High School. THE 2026 NHS BELL MAGAZINE Production Framework. All Rights Reserved.
         </div>
     </footer>
-
-    <!-- INTERACTIVE PAGE CANVAS ENGINE (SPA TABS SWITCHER) -->
-    <script>
+    <!-- INTERACTIVE PAGE CANVAS ENGINE (SPA TABS SWITCHER) -->    <script>
         function switchPage(pageId, tabElement) {
             // Remove active classes from all tab buttons
             document.querySelectorAll('.nav-tab').forEach(tab => {
                 tab.classList.remove('active-tab');
             });
-            
-            // Add active class to the clicked tab button
+                        // Add active class to the clicked tab button
             tabElement.classList.add('active-tab');
 
             // Hide all pages in the viewport with a quick transition
@@ -673,14 +178,11 @@
             const targetPage = document.getElementById(pageId);
             if (targetPage) {
                 targetPage.classList.add('active-page');
-                
-                // Automatically scroll the viewport into position smoothly
+                                // Automatically scroll the viewport into position smoothly
                 window.scrollTo({
                     top: document.querySelector('.archive-nav').offsetTop - 20,
                     behavior: 'smooth'
                 });
             }
         }
-    </script>
-</body>
-</html>
+    </script></body></html>
